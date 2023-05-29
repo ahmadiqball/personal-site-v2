@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Suspense fallback={<Loading />}>
           <LayoutClient />
-          <main className="bg-gradient-to-r  from-[#f4f1f7] to-[#d6cfd6]  dark:bg-gradient-to-r dark:from-[#393c52] dark:to-[#1a1b25] box-border min-h-screen w-screen max-w-full overflow-hidden py-20 px-6 sm:px-10 sm:pb-48 lg:py-10 lg:pr-40 lg:pl-16">
+          <main className="bg-gradient-to-r  from-[#f4f1f7] to-[#d6cfd6]  dark:bg-gradient-to-r dark:from-[#393c52] dark:to-[#1a1b25] box-border min-h-screen w-screen max-w-full overflow-hidden pt-20 pb-32 px-6 sm:px-10 sm:pb-48 lg:py-10 lg:pr-40 lg:pl-16">
             {children}
           </main>
         </Suspense>

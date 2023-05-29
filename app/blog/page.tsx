@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Blog() {
   return (
-    <div className="min-h-screen min-w-screen flex flex-col items-center justify-center">
+    <div className="min-h-[calc(100vh-208px)] sm:min-h-[calc(100vh-272px)] lg:min-h-[calc(100vh-80px)] min-w-screen flex flex-col items-center justify-center">
       <h1 className="text-2xl text-bgDark dark:text-white lg:text-4xl pb-6 lg:pb-10 font-semibold">
         Upcoming blog page...
       </h1>
