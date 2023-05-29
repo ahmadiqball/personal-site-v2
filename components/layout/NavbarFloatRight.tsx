@@ -25,7 +25,7 @@ export default function NavbarFloatRight() {
     } else {
       router.push("/");
     }
-  }, [pathname]);
+  }, [pathname, router]);
 
   const changeNav = (index: number, item: string) => {
     setActive(index);

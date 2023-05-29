@@ -50,8 +50,8 @@ export default function Profile() {
               Bachelor of Engineering, Aerospace Engineering
             </h5>
             <p className="text-sm pt-2">
-              Working on a bachelor thesis titled "Development of Aircraft's
-              Autopilot System for Take-off Phase Using Articial Neural Network"
+              Working on a bachelor thesis titled &quot;Development of Aircraft&apos;s
+              Autopilot System for Take-off Phase Using Articial Neural Network&quot;
               as being part of expertise group of Flight Physics and Aircraft
               Design, Operation, and Maintenance
             </p>

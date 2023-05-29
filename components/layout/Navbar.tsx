@@ -24,7 +24,7 @@ export default function Navbar() {
     } else {
       router.push("/");
     }
-  }, [pathname]);
+  }, [pathname, router]);
 
   const changeNav = (index: number, item: string) => {
     setActive(index);
