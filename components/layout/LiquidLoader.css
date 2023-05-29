@@ -1,0 +1,39 @@
+.liquidContainer {
+    filter: url(#Gooey)
+}
+
+.liquidLoader span {
+    position: absolute;
+    left: 10px;
+    transform-origin: 150px;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    animation: liquidLoader 5s ease-in-out infinite;
+    animation-delay: calc(0.15s * var(--i));
+}   
+
+@keyframes liquidLoader {
+    0%, 10% {
+        width: 100px;
+        height: 100px;
+        transform: rotate(0deg) translateX(120px);
+    }
+    40%, 70% {
+        width: 40px;
+        height: 40px;
+        transform: rotate(calc(360deg / 8 * var(--i))) translateX(10px);
+        box-shadow: 0 0 0 10px #fff;
+    }
+    90%, 100% {
+        width: 100px;
+        height: 100px;
+        transform: rotate(0deg) translateX(120px);
+    }
+}
+
+.liquidLoader svg {
+    width: 0;
+    height: 0;
+}
