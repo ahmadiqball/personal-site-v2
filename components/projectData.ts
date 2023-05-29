@@ -148,6 +148,21 @@ const projectData = [
   ),
   new Project(
     "00009",
+    "Personal Site 1.0",
+    "Front End",
+    "August 2022",
+    "https://v1.ahmadiqbal.site",
+    "https://github.com/ahmadiqball/personal-site-v1",
+    "personal-site-v1.png",
+    "This my first personal website that i build and deploy. This website is a single page application that i build using reactjs and bootstrap. I developed this right after i learn about react. This website is responsive to all paltform.",
+    ["reactjs", "css", "javascript"],
+    [
+      "Responsive in all devices",
+      "Provide contact me using EmailJs",
+    ]
+  ),
+  new Project(
+    "00010",
     "URL Shortener App",
     "Front End",
     "August 2022",
@@ -163,7 +178,7 @@ const projectData = [
     ]
   ),
   new Project(
-    "00010",
+    "00011",
     "Pokemon API Site",
     "Front End",
     "September 2022",
@@ -183,7 +198,7 @@ const projectData = [
     ]
   ),
   new Project(
-    "00011",
+    "00012",
     "SIMA JUARA",
     "Front End",
     "January 2023",
@@ -204,7 +219,7 @@ const projectData = [
     ["Connecting company and jobseeker through a job portal.", "Company app that includes ability for company to create job post and interact with jobseeker.", "Admin app that able to control and oversee user (company and jobseeker)."]
   ),
   new Project(
-    "00012",
+    "00013",
     "Movie App (Reproduce Netflix)",
     "Front End",
     "February 2022",
