@@ -155,7 +155,7 @@ const projectData = [
     "https://github.com/ahmadiqball/personal-site-v1",
     "personal-site-v1.png",
     "This my first personal website that i build and deploy. This website is a single page application that i build using reactjs and bootstrap. I developed this right after i learn about react. This website is responsive to all paltform.",
-    ["reactjs", "css", "javascript"],
+    ["reactjs", "css", "javascript", "bootstrap"],
     [
       "Responsive in all devices",
       "Provide contact me using EmailJs",
