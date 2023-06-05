@@ -169,7 +169,7 @@ const projectData = [
     "https://ahmadiqball.github.io/url-shortener-app",
     "https://ahmadiqball/url-shortener-app",
     "url-shortener.png",
-    "Build a website that provide URL Shortener service, it\'s utilize and API from shrtco.de for the avility to shorten url. This website is fully responsive in all platform that build using ReactJs and basic css. The UI itself is coming from challenge in frontendmentor.io.",
+    "Build a website that provide URL Shortener service, it\'s utilize and API from shrtco.de for the ability to shorten url. This website is fully responsive in all platform that build using ReactJs and basic css. The UI itself is coming from challenge in frontendmentor.io.",
     ["reactjs", "css", "javascript"],
     [
       "Shortening an URL using API from shrtco.de",
@@ -223,7 +223,7 @@ const projectData = [
     "Movie App (Reproduce Netflix)",
     "Front End",
     "February 2022",
-    "https://netflixclone14.vercel.app/",
+    "https://movieapp14.vercel.app/",
     "https://ahmadiqball/netflix-clone",
     "netflix-clone.png",
     "Build a movie web app by reproducing Netflix using Next.Js 13, Typescript, Tailwind CSS, and Firebase. Its features including authentication (login and signup), save user personal data (preference and membership), and custom movie player.",
