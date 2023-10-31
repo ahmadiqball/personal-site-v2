@@ -1,55 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import {
   SiLinkedin,
   SiGithub,
   SiHackerrank,
   SiInstagram,
 } from "react-icons/si";
+import Ticker from "./Ticker";
 
-export default function Banner() {
-  const [text, setText] = useState("");
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [isDelete, setIsDelete] = useState(false);
-  const [loopNum, setLoopNum] = useState(0);
-  const profText = ["Web Developer", "Data Scientist"];
-  const period = 2000;
-
-  const type = () => {
-    let idx = loopNum % profText.length;
-    let fullText = profText[idx];
-    let movingText = isDelete
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-
-    setText(movingText);
-
-    if (isDelete) {
-      setDelta((prevDelta) => prevDelta / 2);
-    }
-
-    if (!isDelete && movingText === fullText) {
-      setIsDelete(true);
-      setDelta(period);
-    } else if (isDelete && movingText === "") {
-      setIsDelete(false);
-      setLoopNum((prevNum) => prevNum + 1);
-      setDelta(500);
-    }
-  };
-
-  useEffect(() => {
-    let typer = setInterval(() => {
-      type();
-    }, delta);
-
-    return () => {
-      clearInterval(typer);
-    };
-  }, [text, delta]);
-
+export default function Banner({profile, resume}: any) {
+  console.log("🚀 ~ file: Banner.tsx:13 ~ Banner ~ resume:", resume)
   return (
     <section className="py-10 sm:flex sm:flex-row-reverse sm:items-center sm:min-h-[calc(100vh-440px)] min-h-[calc(100vh-40px)] lg:min-h-[calc(100vh-40px)]">
       <Image
@@ -62,17 +23,14 @@ export default function Banner() {
 
       <div className="lg:pl-36">
         <h1 className="text-3xl text-bgDark dark:text-white font-bold mt-16 sm:text-4xl lg:text-5xl">
-          Ahmad Iqbal<br></br>
+          {profile.name}<br></br>
           <span>
-            <span className="border-r text-2xl lg:text-3xl font-semibold border-[#666]">
-              {text}
-            </span>
+            <Ticker titles={profile.titles}/>
           </span>
         </h1>
 
         <p className="pt-3 dark:text-gray-100 sm:max-w-xs lg:max-w-md">
-          A fronted developer and data scientist that eager to learn and grow.
-          Excited to use my skills to create engaging and interactive things.
+          {profile.description}
         </p>
 
         <div className="pt-6 flex gap-2">
