@@ -40,7 +40,7 @@ export async function getStacksIcon() {
 }
 
 export async function getProjectsData() {
-  const projects = await client.fetch({
+  const projects: any[] = await client.fetch({
     query: `*[_type == "projects"]{
       ..., 
       stacks[]->{
