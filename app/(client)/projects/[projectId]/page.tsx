@@ -1,11 +1,5 @@
-
-
 import { getSingleProjectData } from "@/app/api/sanity";
-import { projectData, Project } from "@/components/projectData";
-import Stack from "@/components/projects/Stack";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import { BsGlobe } from "react-icons/bs";
 import { SiGithub } from "react-icons/si";
 import {PortableText} from '@portabletext/react'

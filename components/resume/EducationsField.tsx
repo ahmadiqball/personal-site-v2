@@ -1,5 +1,3 @@
-'use client'
-
 import { getFormattedDate } from "@/utils/dateFormatter"
 import { PortableText } from "@portabletext/react"
 

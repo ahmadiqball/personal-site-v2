@@ -1,5 +1,3 @@
-import Stack from "@/components/projects/Stack";
-import { works, techStack, volunteer } from "./resumeData";
 import { Metadata } from "next";
 import WorksField from "@/components/resume/WorksField";
 import EducationsField from "@/components/resume/EducationsField";

@@ -1,5 +1,3 @@
-'use client'
-
 import { getFormattedDate } from "@/utils/dateFormatter"
 
 export default function WorksField({works}: any) {
