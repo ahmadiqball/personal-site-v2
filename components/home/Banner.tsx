@@ -10,7 +10,6 @@ import {
 import Ticker from "./Ticker";
 
 export default function Banner({profile, resume}: any) {
-  console.log("🚀 ~ file: Banner.tsx:13 ~ Banner ~ resume:", resume)
   return (
     <section className="py-10 sm:flex sm:flex-row-reverse sm:items-center sm:min-h-[calc(100vh-440px)] min-h-[calc(100vh-40px)] lg:min-h-[calc(100vh-40px)]">
       <Image

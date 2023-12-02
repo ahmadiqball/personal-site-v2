@@ -7,6 +7,9 @@ import { getProfileData, getProjectsData, getResumeData } from '../api/sanity';
 
 export const metadata: Metadata = {
   title: 'Ahmad Iqbal | Home',
+  icons: {
+    icon: 'favicon.ico',
+  },
 };
 
 export default async function Home() {
