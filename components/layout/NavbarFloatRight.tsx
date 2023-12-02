@@ -100,7 +100,7 @@ export default function NavbarFloatRight() {
         <div
           className={`absolute bg-mainLight w-[68px] h-[68px] top-0 rounded-[50%] left-0 ease-in-out transition-all duration-300`}
           style={{
-            transform: `translate(calc(-51% - 13px), calc(calc(328px)*${
+            transform: `translate(calc(-51% - 12px), calc(calc(328px)*${
               0.125 + 0.25 * active
             } - 50%))`,
           }}

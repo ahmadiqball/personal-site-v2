@@ -27,13 +27,13 @@ export default function DarkModeSwitch() {
   return (
     <div
       onClick={changeMode}
-      className={`relative p-1 rounded-[32px] w-24 lg:w-fit lg:h-28 lg:flex-col flex items-center ${
+      className={`relative p-1 rounded-[32px] w-20 md:w-24 lg:w-fit lg:h-28 lg:flex-col flex items-center ${
         mode === "light" ? "bg-[#FFBF00]" : "bg-[#250B82]"
       } overflow-hidden hover:cursor-pointer`}
     >
       <div
         className={`shadow-[0_0_40px_10px_#FB6BB6] rounded-[50%] transition-all ease-in duration-500 ${
-          mode === "dark" && "translate-x-[52px] lg:translate-x-0 lg:translate-y-[66px]"
+          mode === "dark" && "translate-x-[44px] md:translate-x-[52px] lg:translate-x-0 lg:translate-y-[66px]"
         }`}
       >
         <div
@@ -41,14 +41,14 @@ export default function DarkModeSwitch() {
         >
           {mode === "light" && (
             <BsSun
-              className={`text-xl text-[#FFBF00] ${
+              className={`text-xs md:text-xl text-[#FFBF00] ${
                 mode === "light" ? "opacity-100" : "opacity-0"
               }`}
             />
           )}
           {mode === "dark" && (
             <BsMoonStars
-              className={`text-xl text-[#250B82] ${
+              className={`text-xs md:text-xl text-[#250B82] ${
                 mode === "dark" ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -57,7 +57,7 @@ export default function DarkModeSwitch() {
       </div>
 
       <div
-        className={`text-white text-xs text-center grow font-bold lg:pt-5 ease-in-out transition-all duration-500 ${
+        className={`text-white text-[8px] md:text-xs text-center grow font-bold lg:pt-5 ease-in-out transition-all duration-500 ${
           mode === "light" ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -66,7 +66,7 @@ export default function DarkModeSwitch() {
       </div>
 
       <div
-        className={`absolute left-4 lg:top-5 lg:left-[6px] text-white text-xs text-center grow font-bold ease-in-out transition-all duration-500 ${
+        className={`absolute left-4 lg:top-5 lg:left-[6px] text-white text-[8px] md:text-xs text-center grow font-bold ease-in-out transition-all duration-500 ${
           mode === "dark" ? "opacity-100" : "opacity-0"
         }`}
       >

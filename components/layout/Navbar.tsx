@@ -36,53 +36,53 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed bottom-0 left-0 w-screen bg-white px-8 z-40">
+    <nav className="fixed bottom-0 left-0 w-[calc(100vw-24px)] px-8 z-40 mb-3 mx-3 rounded-xl">
       <div className="relative w-full flex justify-between">
         {navList.map((item, index) => (
           <div
             key={index}
-            className="flex relative grow flex-col items-center py-4 w-[82px] hover:cursor-pointer"
+            className="flex relative grow flex-col items-center pt-3 pb-2 w-[82px] hover:cursor-pointer"
             onClick={() => changeNav(index, item)}
           >
             <div
               className={`z-10 ease-in-out transition-all duration-300 ${
                 active === index &&
-                "bg-transparent absolute -translate-y-[31px]"
+                "bg-transparent absolute -translate-y-[24px]"
               }`}
             >
               {item === "projects" ? (
                 <FaTasks
                   className={`${
                     active === index ? "text-bgLight" : "text-gray-400"
-                  } text-3xl`}
+                  } text-xl`}
                 />
               ) : null}
               {item === "blog" ? (
                 <FaBook
                   className={`${
                     active === index ? "text-bgLight" : "text-gray-400"
-                  } text-3xl`}
+                  } text-xl`}
                 />
               ) : null}
               {item === "home" ? (
                 <FaHome
                   className={`${
                     active === index ? "text-bgLight" : "text-gray-400"
-                  } text-3xl`}
+                  } text-xl`}
                 />
               ) : null}
               {item === "resume" ? (
                 <FaUser
                   className={`${
                     active === index ? "text-bgLight" : "text-gray-400"
-                  } text-3xl`}
+                  } text-xl`}
                 />
               ) : null}
             </div>
             <p
               className={`${
                 active === index ? "text-mainLight" : "text-gray-400"
-              } text-xs font-semibold pt-1 grow flex items-end capitalize`}
+              } text-[10px] font-semibold pt-2 grow flex items-end capitalize`}
             >
               {item}
             </p>
@@ -90,21 +90,34 @@ export default function Navbar() {
         ))}
 
         <div
-          className={`absolute bg-mainLight w-[68px] h-[68px] top-0 rounded-[50%] left-0 ease-in-out transition-all duration-300`}
+          className={`absolute bg-mainLight w-[60px] h-[60px] top-0 rounded-[50%] left-0 ease-in-out transition-all duration-[300ms] -z-10`}
           style={{
-            transform: `translate(calc(calc(100vw - 64px)*${
+            transform: `translate(calc(calc(100vw - 87px)*${
               0.125 + 0.25 * active
             } - 50%), -51%)`,
           }}
         >
-          <span className="w-[84px] h-[42px] rounded-b-full absolute top-1/2 -left-2 bg-bgLight dark:bg-bgDark -z-50" />
-          <span className="bg-mainLight w-[68px] h-[68px] rounded-[50%] absolute top-0 left-0" />
-          <span className="absolute h-4 w-4 top-1/2 left-0 -translate-x-[21px] bg-bgLight dark:bg-bgDark ">
-            <span className="w-5 h-5 bg-white absolute top-[1px] right-0  rounded-tr-full" />
-          </span>
-          <span className="absolute h-4 w-4 top-1/2 right-0 translate-x-[21px] bg-bgLight dark:bg-bgDark ">
-            <span className="w-5 h-5 bg-white absolute top-[1px] left-0  rounded-tl-full" />
-          </span>
+          <div 
+            className="absolute w-[calc(100vw)] h-[63px] top-1/2 right-[calc(100%+10px)] bg-white rounded-l-xl transition-all duration-300"
+            style={{
+              width: `calc(calc(calc(100vw - 87px)*${
+                0.125 + 0.25 * active
+              } - 50%) + 22px)`
+            }}
+          />
+          <div className="absolute w-[calc(100%+24px)] h-[63px] top-1/2 -left-[12px] overflow-hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 500 500" className="fill-white">
+              <path d="M0 250v250h500V0h-4.2c-6.5 0-16.6 2.7-22.2 6-11.3 6.4-20.4 19.1-22.7 31.5-8.8 46.8-32.3 88.9-66.4 118.8-19.3 16.9-48.2 33.4-72.1 41.2-42.1 13.6-87.8 13.6-129.4-.1-12.9-4.3-35.6-15.2-47-22.5C90.4 145.4 57.8 98 46.5 44.5c-3.1-14.9-6.8-22.9-14-30.4C24.9 6.1 11.7 0 2 0 0 0 0 2.8 0 250z"/>
+            </svg>
+          </div>
+          <div 
+            className="absolute h-[63px] top-1/2 left-[calc(100%+10px)] bg-white rounded-r-xl transition-all duration-300"
+            style={{
+              width: `calc(calc(100vw - calc(calc(100vw - 87px)*${
+                0.125 + 0.25 * active
+              } - 50%)) - 125px)`
+            }}
+          />
         </div>
       </div>
     </nav>
