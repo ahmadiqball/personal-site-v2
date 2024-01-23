@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import WorksField from "@/components/resume/WorksField";
-import EducationsField from "@/components/resume/EducationsField";
+import WorksField from "@/components/resume/works-field";
+import EducationsField from "@/components/resume/educations-field";
 import { getResumeData } from "@/app/api/sanity";
 import Image from "next/image";
 

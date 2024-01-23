@@ -1,4 +1,4 @@
-import { getFormattedDate } from "@/utils/dateFormatter"
+import { getFormattedDate } from "@/utils/date-formatter"
 
 export default function WorksField({works}: any) {
   works.sort((a: any,b: any) => {

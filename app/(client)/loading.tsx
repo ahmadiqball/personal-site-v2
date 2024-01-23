@@ -1,4 +1,4 @@
-import LiquidLoader from "@/components/layout/LiqudLoader";
+import LiquidLoader from "@/components/layout/liquid-loader";
 
 export default function Loading() {
   return (

@@ -2,10 +2,8 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { FaHome, FaBook, FaUser, FaTasks } from "react-icons/fa";
-import DarkModeSwitch from "./DarkModeSwitch";
-
-const navList = ["projects", "blog", "home", "resume"];
+import DarkModeSwitch from "./dark-mode-switch";
+import { navList } from "./layout.constants";
 
 export default function NavbarFloat() {
   const [active, setActive] = useState<number>(2);
@@ -53,7 +51,7 @@ export default function NavbarFloat() {
             <div
               key={index}
               className="flex relative grow flex-col items-center py-4 w-[82px] hover:cursor-pointer"
-              onClick={() => changeNav(index, item)}
+              onClick={() => changeNav(index, item.label)}
             >
               <div
                 className={`z-10 ease-in-out transition-all duration-300 ${
@@ -61,41 +59,18 @@ export default function NavbarFloat() {
                   "bg-transparent absolute -translate-y-[31px]"
                 }`}
               >
-                {item === "projects" ? (
-                  <FaTasks
-                    className={`${
-                      active === index ? "text-bgLight" : "text-gray-400"
-                    } text-3xl`}
-                  />
-                ) : null}
-                {item === "blog" ? (
-                  <FaBook
-                    className={`${
-                      active === index ? "text-bgLight" : "text-gray-400"
-                    } text-3xl`}
-                  />
-                ) : null}
-                {item === "home" ? (
-                  <FaHome
-                    className={`${
-                      active === index ? "text-bgLight" : "text-gray-400"
-                    } text-3xl`}
-                  />
-                ) : null}
-                {item === "resume" ? (
-                  <FaUser
-                    className={`${
-                      active === index ? "text-bgLight" : "text-gray-400"
-                    } text-3xl`}
-                  />
-                ) : null}
+                <item.Icon
+                  className={`${
+                    active === index ? "text-bgLight" : "text-gray-400"
+                  } text-3xl`}
+                />
               </div>
               <p
                 className={`${
                   active === index ? "text-mainLight" : "text-gray-400"
                 } text-xs font-semibold pt-1 grow flex items-end capitalize`}
               >
-                {item}
+                {item.label}
               </p>
             </div>
           ))}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ProjectCard from "../projects/ProjectCard";
+import ProjectCard from "../projects/project-card";
 
 export default function RecentProject({projects}: {projects: any}) {
   projects.sort((a: any,b: any) => {

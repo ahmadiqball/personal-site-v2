@@ -2,11 +2,9 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { FaHome, FaBook, FaUser, FaTasks } from "react-icons/fa";
+import { navList } from "./layout.constants";
 
-const navList = ["projects", "blog", "home", "resume"];
-
-export default function Navbar() {
+export function Navbar() {
   const [active, setActive] = useState<number>(2);
   const pathname = usePathname();
   const router = useRouter();
@@ -44,7 +42,7 @@ export default function Navbar() {
             <div
               key={index}
               className="flex relative flex-1 flex-col items-center pt-3 pb-2 hover:cursor-pointer"
-              onClick={() => changeNav(index, item)}
+              onClick={() => changeNav(index, item.label)}
             >
               <div
                 className={`z-10 ease-in-out transition-all duration-300 ${
@@ -52,41 +50,18 @@ export default function Navbar() {
                   "bg-transparent absolute -translate-y-[24px]"
                 }`}
               >
-                {item === "projects" ? (
-                  <FaTasks
-                    className={`${
-                      active === index ? "text-bgLight" : "text-gray-400"
-                    } text-xl`}
-                  />
-                ) : null}
-                {item === "blog" ? (
-                  <FaBook
-                    className={`${
-                      active === index ? "text-bgLight" : "text-gray-400"
-                    } text-xl`}
-                  />
-                ) : null}
-                {item === "home" ? (
-                  <FaHome
-                    className={`${
-                      active === index ? "text-bgLight" : "text-gray-400"
-                    } text-xl`}
-                  />
-                ) : null}
-                {item === "resume" ? (
-                  <FaUser
-                    className={`${
-                      active === index ? "text-bgLight" : "text-gray-400"
-                    } text-xl`}
-                  />
-                ) : null}
+                <item.Icon
+                  className={`${
+                    active === index ? "text-bgLight" : "text-gray-400"
+                  } text-xl`}
+                /> 
               </div>
               <p
                 className={`${
                   active === index ? "text-mainLight" : "text-gray-400"
                 } text-[10px] font-semibold pt-2 grow flex items-end capitalize`}
               >
-                {item}
+                {item.label}
               </p>
             </div>
           ))}
@@ -94,7 +69,7 @@ export default function Navbar() {
           <div
             className={`absolute bg-mainLight w-[60px] h-[60px] top-0 rounded-[50%] left-0 ease-in-out transition-all duration-[300ms] -z-10`}
             style={{
-              transform: `translate(calc(calc(calc(100vw - 56px) / ${4 / (active + 0.5)}) - 50%), -51%)`,
+              transform: `translate(calc(calc(calc(100vw - 56px) / ${4 / (active + 0.5)}) - 50%), -50%)`,
             }}
           >
             <div 
