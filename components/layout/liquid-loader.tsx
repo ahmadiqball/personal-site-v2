@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./LiquidLoader.css";
+import "./liquid-loader.css";
 import React from "react";
 
 export default function LiquidLoader() {

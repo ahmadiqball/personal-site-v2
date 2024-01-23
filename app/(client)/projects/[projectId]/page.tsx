@@ -3,7 +3,7 @@ import Image from "next/image";
 import { BsGlobe } from "react-icons/bs";
 import { SiGithub } from "react-icons/si";
 import {PortableText} from '@portabletext/react'
-import { getFormattedDate } from "@/utils/dateFormatter";
+import { getFormattedDate } from "@/utils/date-formatter";
 
 export default async function ProjectDetail({params}: any) {
   const project = await getSingleProjectData(params.projectId)

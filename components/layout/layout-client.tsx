@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import Header from "./Header";
-import Navbar from "./Navbar";
-import NavbarFloat from "./NavbarFloat";
-import NavbarFloatRight from "./NavbarFloatRight";
+import Header from "./header";
+import { Navbar } from "./navbar";
+import NavbarFloat from "./navbar-float";
+import NavbarFloatRight from "./navbar-float-right";
 
 export default function LayoutClient() {
     const [width, setWidth] = useState<number | null>(null);

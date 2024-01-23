@@ -1,7 +1,7 @@
-import Banner from '@/components/home/Banner'
-import RecentBlog from '@/components/home/RecentBlog'
-import RecentProject from '@/components/home/RecentProject'
-import Skills from '@/components/home/Skills'
+import Banner from '@/components/home/banner'
+import RecentBlog from '@/components/home/recent-blog'
+import RecentProject from '@/components/home/recent-project'
+import Skills from '@/components/home/skills'
 import { Metadata } from 'next';
 import { getProfileData, getProjectsData, getResumeData } from '../api/sanity';
 

@@ -7,7 +7,7 @@ import {
   SiHackerrank,
   SiInstagram,
 } from "react-icons/si";
-import Ticker from "./Ticker";
+import Ticker from "./ticker";
 
 export default function Banner({profile, resume}: any) {
   return (

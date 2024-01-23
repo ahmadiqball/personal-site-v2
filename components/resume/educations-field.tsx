@@ -1,4 +1,4 @@
-import { getFormattedDate } from "@/utils/dateFormatter"
+import { getFormattedDate } from "@/utils/date-formatter"
 import { PortableText } from "@portabletext/react"
 
 export default function EducationsField({education, resume}: any) {

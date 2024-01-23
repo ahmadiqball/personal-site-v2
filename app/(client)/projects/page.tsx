@@ -1,4 +1,4 @@
-import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectCard from "@/components/projects/project-card";
 import { getProjectsData } from "@/app/api/sanity";
 
 export default async function Projects() {

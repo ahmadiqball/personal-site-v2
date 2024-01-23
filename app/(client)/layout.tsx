@@ -2,7 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import Loading from "./loading";
-import LayoutClient from "@/components/layout/LayoutClient";
+import LayoutClient from "@/components/layout/layout-client";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +25,11 @@ export default function RootLayout({
         <link rel="icon" href="favicon.ico" sizes="any" />
         <Suspense fallback={<Loading />}>
           <LayoutClient />
-          <main className="bg-gradient-to-r  from-[#f4f1f7] to-[#d6cfd6]  dark:bg-gradient-to-r dark:from-[#393c52] dark:to-[#1a1b25] box-border min-h-screen w-screen max-w-full overflow-hidden pt-20 pb-32 px-6 sm:px-10 sm:pb-48 lg:py-10 lg:pr-40 lg:pl-16">
-            {children}
+          <main className="bg-gradient-to-r bg-[#ede6f2] dark:bg-black box-border min-h-screen w-screen max-w-full overflow-hidden pt-20 pb-32 px-6 sm:px-10 sm:pb-48 lg:py-10 lg:pr-40 lg:pl-16">
+            <div className="fixed top-0 left-0 w-full h-screen bg-[radial-gradient(circle_at_-70%,rgba(95,32,181,0.5)_0%,rgba(95,32,181,0.3)_1%,rgba(0,0,0,0)_80%)]"/>
+            <div className="relative z-10">
+              {children}
+            </div>
           </main>
         </Suspense>
       </body>
