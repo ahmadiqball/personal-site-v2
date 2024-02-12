@@ -128,7 +128,7 @@ export async function getBlogPostData(slug: string): Promise<any> {
 export async function getBlogDataList() {
   const blogPostList: any = await client.fetch({
     config: {
-      cache: 'no-store',
+      cache: 'force-cache',
     },
     query: `*[_type == "blog"]{
       mainImage{

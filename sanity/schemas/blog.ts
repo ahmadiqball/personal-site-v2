@@ -1,9 +1,6 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'blog',
-  title: 'Blog',
-  type: 'document',
   fields: [
     defineField({
       name: 'title',
@@ -12,35 +9,35 @@ export default defineType({
     }),
     defineField({
       name: 'slug',
+      options: {
+        maxLength: 96,
+        source: 'title',
+      },
       title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
     }),
     defineField({
       name: 'type',
+      options: {
+        list: ['Front End', 'Back End', 'Fullstack', 'Data Analysis', 'Data Science'],
+      },
       title: 'Types',
       type: 'string',
-      options: {
-          list: ['Front End', 'Back End', 'Fullstack', 'Data Analysis', 'Data Science']
-      }
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
       fields: [
         {
           name: 'alt',
-          type: 'string',
           title: 'Alternative Text',
-        }
-      ]
+          type: 'string',
+        },
+      ],
+      name: 'mainImage',
+      options: {
+        hotspot: true,
+      },
+      title: 'Main image',
+      type: 'image',
     }),
     defineField({
       name: 'publishedAt',
@@ -53,16 +50,19 @@ export default defineType({
       type: 'blockContent',
     }),
   ],
-
+  name: 'blog',
   preview: {
-    select: {
-      title: 'title',
-      profile: 'profile.name',
-      media: 'mainImage',
-    },
     prepare(selection) {
-      const {profile} = selection
-      return {...selection, subtitle: profile && `by ${profile}`}
+      const { profile } = selection;
+      return { ...selection, subtitle: profile && `by ${profile}` };
+    },
+    select: {
+      media: 'mainImage',
+      profile: 'profile.name',
+      title: 'title',
     },
   },
-})
+  title: 'Blog',
+
+  type: 'document',
+});

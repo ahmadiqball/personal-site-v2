@@ -1,13 +1,18 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function BlogCard({ data }) {
   console.log('🚀 ~ BlogCard ~ props:', data);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       { data.map((item) => (
-        <div className="relative rounded-xl overflow-hidden text-white group w-full h-60" key={ item._id }>
+        <Link
+          className="relative rounded-xl overflow-hidden text-white group w-full h-60 cursor-pointer"
+          href={ `blog/${item.slug.current}` }
+          key={ item._id }
+        >
           <Image
             alt={ item.mainImage.alt }
             blurDataURL={ item.mainImage.asset.metadata.blurHash }
@@ -21,7 +26,7 @@ export function BlogCard({ data }) {
 
             <h5 className="text-white font-semibold text-xl">{ item.title }</h5>
 
-            <div className="flex items-center text-sm gap-2 pt-1 opacity-70">
+            <div className="flex items-center text-xs gap-2 pt-1 opacity-70">
               <span>{ (new Date(item.publishedAt)).toDateString() }</span>
 
               <span className="w-1 h-1 bg-white rounded-full" />
@@ -29,7 +34,7 @@ export function BlogCard({ data }) {
               <span>{ `${Math.round(item.char / 1000)} minutes read` }</span>
             </div>
           </div>
-        </div>
+        </Link>
       )) }
     </div>
   );

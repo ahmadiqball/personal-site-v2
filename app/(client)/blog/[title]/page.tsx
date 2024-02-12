@@ -11,11 +11,11 @@ export default async function BlogPost({ params }: any) {
   }
 
   return (
-    <div className="relative">
+    <div className="relative max-w-[875px] mx-auto">
       <Image
         alt={ article.mainImage.alt }
         blurDataURL={ article.mainImage.asset.metadata.blurHash }
-        className="w-full object-cover rounded-xl"
+        className="w-full object-cover rounded-xl md:max-w-[700px] mx-auto"
         height={ 400 }
         placeholder="blur"
         src={ article.mainImage.asset.url }
@@ -23,8 +23,8 @@ export default async function BlogPost({ params }: any) {
       />
 
       <div className="px-1.5 text-bgDark dark:text-bgLight">
-        <div>
-          <h5 className="font-bold text-2xl pt-4">{ article.title }</h5>
+        <div className="pb-6">
+          <h5 className="font-bold text-2xl lg:text-3xl pt-4">{ article.title }</h5>
 
           <div className="flex items-center text-sm gap-2 pt-2">
             <p>{ article.type }</p>
