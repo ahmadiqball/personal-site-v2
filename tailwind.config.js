@@ -6,19 +6,19 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
+  plugins: [],
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       colors: {
-        'bgLight': '#f0ecf3',
-        'mainLight': '#5560b3',
-        'bgDark': '#2e3042',
+        bgDark: '#2e3042',
+        bgLight: '#f0ecf3',
+        mainLight: '#5560b3',
       },
     },
   },
-  plugins: [],
-}
+};
