@@ -89,13 +89,13 @@ export default function NavbarFloatRight() {
           >
             <div className="absolute w-[82px] h-[300px] left-1/2 bottom-[calc(100%+14px)] bg-white" />
 
-            <div className="absolute w-[calc(100%+30px)] h-[82px] left-[calc(50%-8px)] -top-[7px] overflow-hidden -rotate-90">
+            <div className="absolute w-[calc(100%+30px)] h-[82px] left-[calc(50%-8px)] -top-[7.5px] overflow-hidden -rotate-90">
               <svg className="fill-white" version="1.0" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 250v250h500V0h-4.2c-6.5 0-16.6 2.7-22.2 6-11.3 6.4-20.4 19.1-22.7 31.5-8.8 46.8-32.3 88.9-66.4 118.8-19.3 16.9-48.2 33.4-72.1 41.2-42.1 13.6-87.8 13.6-129.4-.1-12.9-4.3-35.6-15.2-47-22.5C90.4 145.4 57.8 98 46.5 44.5c-3.1-14.9-6.8-22.9-14-30.4C24.9 6.1 11.7 0 2 0 0 0 0 2.8 0 250z" />
               </svg>
             </div>
 
-            <div className="absolute w-[82px] h-[300px] left-1/2 top-[calc(100%+14px)] bg-white" />
+            <div className="absolute w-[82px] h-[300px] left-1/2 top-[calc(100%+13px)] bg-white" />
           </div>
         </div>
       </div>

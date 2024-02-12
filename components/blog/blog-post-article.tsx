@@ -117,7 +117,6 @@ const components: Partial<PortableTextReactComponents> = {
 };
 
 export function BlogPostArticle(props: any): JSX.Element {
-  console.log('🚀 ~ BlogPostArticle ~ props:', props.article);
   return (
     <div className="text-bgDark dark:text-white text-sm text-justify pt-1">
       <PortableText

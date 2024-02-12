@@ -2,16 +2,15 @@ import { dataset, projectId } from '@/sanity/env';
 import SanityClient from 'next-sanity-client';
 
 export const client = new SanityClient({
-  apiVersion: (new Date()).toISOString().slice(0, 10), // use current date (YYYY-MM-DD) to target the latest API version
+  apiVersion: (new Date()).toISOString().slice(0, 10),
   dataset,
   projectId,
-  token: process.env.SANITY_SECRET_TOKEN, // Only if you want to update content with the client
-  useCdn: false, // set to `false` to bypass the edge cache
+  token: process.env.SANITY_SECRET_TOKEN,
+  useCdn: false,
 });
 
 const stackQuery = 'icon{..., asset->{...,}},';
 
-// uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getProfileData(): Promise<any> {
   const profile: any = await client.fetch({
     config: {
