@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export function BlogCard({ data }) {
-  console.log('🚀 ~ BlogCard ~ props:', data);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       { data.map((item) => (

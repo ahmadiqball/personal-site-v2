@@ -19,10 +19,10 @@ export default function ProjectCard({ project }: any) {
       <div className="absolute -z-10 bg-black dark:bg-white w-full h-full top-0 left-0 opacity-10 backdrop-blur-3xl" />
 
       <Image
-        alt={ project.images[0].asset.url }
+        alt={ project.image.asset.url }
         className="w-full aspect-video"
         height={ 400 }
-        src={ project.images[0].asset.url }
+        src={ project.image.asset.url }
         width={ 400 }
       />
 

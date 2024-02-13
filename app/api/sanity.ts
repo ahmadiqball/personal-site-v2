@@ -20,7 +20,21 @@ export async function getProfileData(): Promise<any> {
         ..., 
         stacks[]->{
           ..., ${stackQuery}
-        }}`,
+        },
+        featuredPortfolio[]->{
+          projectName,
+          description,
+          slug,
+          webUrl,
+          repoUrl,
+          "image": images[0]{
+            asset->{
+              ...,
+            }
+          },
+          _id
+        }
+      }`,
   });
   return profile[0];
 }

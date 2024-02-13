@@ -16,7 +16,6 @@ export const metadata: Metadata = {
 
 export default async function Home(): Promise<JSX.Element> {
   const profile = await getProfileData();
-  const projects = await getProjectsData();
   const blog = await getBlogDataList();
 
   return (
@@ -25,7 +24,7 @@ export default async function Home(): Promise<JSX.Element> {
 
       <Skills skills={ profile.stacks } />
 
-      <RecentProject projects={ projects } />
+      <RecentProject projects={ profile.featuredPortfolio } />
 
       <RecentBlog data={ blog } />
     </div>

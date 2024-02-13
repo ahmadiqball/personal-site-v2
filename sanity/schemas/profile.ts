@@ -31,6 +31,17 @@ export default defineType({
           to: [{type: 'stacks'}]
         }
       ]
+    },
+    {
+      name: 'featuredPortfolio',
+      title: 'Featured Portfolio',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'projects' }]
+        }
+      ]
     }
   ],
   preview: {

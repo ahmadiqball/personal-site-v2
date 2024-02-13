@@ -10,11 +10,11 @@ export function RecentProject({ projects }: { projects: any }): JSX.Element {
   return (
     <section className="mt-16">
       <h3 className="text-2xl text-bgDark dark:text-white font-bold pb-5">
-        Recent Projects
+        Featured Portfolio
       </h3>
 
       <div className="grid grid-col-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 justify-center items-center">
-        { projects.slice(0, 3).map((item: any) => (
+        { projects.map((item: any) => (
           <ProjectCard key={ item._id } project={ item } />
         )) }
       </div>
