@@ -1,4 +1,4 @@
-import { getFormattedDate } from '@/utils/date-formatter';
+import { getFormattedDates } from '@/utils/date-formatter';
 import { PortableText } from '@portabletext/react';
 
 export default function EducationsField({ education }: any) {
@@ -7,7 +7,7 @@ export default function EducationsField({ education }: any) {
       { education.map((item: any) => (
         <div key={ item._key }>
           <h5 className="text-md text-gray-500 dark:text-gray-400">
-            { getFormattedDate(item.startDate, item.endDate) }
+            { getFormattedDates(item.startDate, item.endDate) }
           </h5>
 
           <div>

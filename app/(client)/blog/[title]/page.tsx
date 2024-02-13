@@ -1,5 +1,6 @@
 import { getBlogPostData } from '@/app/api/sanity';
 import { BlogPostArticle } from '@/components/blog/blog-post-article';
+import { getFormattedDate } from '@/utils/date-formatter';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -46,7 +47,7 @@ export default async function BlogPost({ params }: any) {
             <div className="flex flex-col text-xs gap-1">
               <span className="font-semibold text-sm leading-[14px]">Ahmad Iqbal</span>
 
-              <span className="opacity-70">{ (new Date(article.publishedAt)).toDateString() }</span>
+              <span className="opacity-70">{ getFormattedDate(article.publishedAt) }</span>
             </div>
           </div>
         </div>

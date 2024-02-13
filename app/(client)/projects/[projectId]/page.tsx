@@ -1,5 +1,5 @@
 import { getSingleProjectData } from '@/app/api/sanity';
-import { getFormattedDate } from '@/utils/date-formatter';
+import { getFormattedDates } from '@/utils/date-formatter';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { BsGlobe } from 'react-icons/bs';
@@ -29,7 +29,7 @@ export default async function ProjectDetail({ params }: any) {
           <h5 className="pr-4">{ project.type }</h5>
 
           <h5 className="sm:pl-4">
-            { getFormattedDate(project.startDate, project.endDate) }
+            { getFormattedDates(project.startDate, project.endDate) }
           </h5>
         </div>
 

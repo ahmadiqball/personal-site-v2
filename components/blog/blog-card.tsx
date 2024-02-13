@@ -1,7 +1,9 @@
 'use client';
 
+import { getFormattedDate } from '@/utils/date-formatter';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaRegCalendarAlt, FaRegClock } from 'react-icons/fa';
 
 export function BlogCard({ data }) {
   return (
@@ -25,12 +27,10 @@ export function BlogCard({ data }) {
 
             <h5 className="text-white font-semibold text-xl">{ item.title }</h5>
 
-            <div className="flex items-center text-xs gap-2 pt-1 opacity-70">
-              <span>{ (new Date(item.publishedAt)).toDateString() }</span>
+            <div className="flex items-center text-xs gap-4 pt-1 opacity-70">
+              <span className='flex items-center gap-1'><FaRegCalendarAlt className='mb-[1px]'/>{ getFormattedDate(item.publishedAt) }</span>
 
-              <span className="w-1 h-1 bg-white rounded-full" />
-
-              <span>{ `${Math.round(item.char / 1000)} minutes read` }</span>
+              <span className='flex items-center gap-1'><FaRegClock className='mb-[1px]' />{ `${Math.round(item.char / 1000)} minutes read` }</span>
             </div>
           </div>
         </Link>

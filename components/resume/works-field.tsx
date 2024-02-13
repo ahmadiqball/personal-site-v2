@@ -1,4 +1,4 @@
-import { getFormattedDate } from "@/utils/date-formatter"
+import { getFormattedDates } from "@/utils/date-formatter"
 
 export default function WorksField({works}: any) {
   works.sort((a: any,b: any) => {
@@ -9,7 +9,7 @@ export default function WorksField({works}: any) {
       <div>
       {works.map((work: any, index: any) => (
         <div key={index} className="mt-2">
-          <h5 className="text-md text-gray-500 dark:text-gray-400">{getFormattedDate(work.startDate, work.endDate)}</h5>
+          <h5 className="text-md text-gray-500 dark:text-gray-400">{getFormattedDates(work.startDate, work.endDate)}</h5>
           <div>
             <h4 className="text-md font-semibold">{work.position}</h4>
             <h5 className="text-md">{`${work.company}, ${work.location}`}</h5>
