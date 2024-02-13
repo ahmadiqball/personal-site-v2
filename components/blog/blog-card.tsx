@@ -5,10 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaRegCalendarAlt, FaRegClock } from 'react-icons/fa';
 
-export function BlogCard({ data }) {
+export function BlogCard({ data }: any) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      { data.map((item) => (
+      { data.map((item: any) => (
         <Link
           className="relative rounded-xl overflow-hidden text-white group w-full h-60 cursor-pointer"
           href={ `blog/${item.slug.current}` }
