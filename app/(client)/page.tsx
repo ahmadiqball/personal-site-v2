@@ -1,28 +1,32 @@
-import Banner from '@/components/home/banner'
-import RecentBlog from '@/components/home/recent-blog'
-import RecentProject from '@/components/home/recent-project'
-import Skills from '@/components/home/skills'
-import { Metadata } from 'next';
-import { getProfileData, getProjectsData, getResumeData } from '../api/sanity';
+import type { Metadata } from 'next';
+
+import { Banner } from '@/components/home/banner';
+import { RecentBlog } from '@/components/home/recent-blog';
+import { RecentProject } from '@/components/home/recent-project';
+import { Skills } from '@/components/home/skills';
+
+import { getBlogDataList, getProfileData, getProjectsData } from '../api/sanity';
 
 export const metadata: Metadata = {
-  title: 'Ahmad Iqbal | Home',
   icons: {
     icon: 'favicon.ico',
   },
+  title: 'Ahmad Iqbal | Home',
 };
 
-export default async function Home() {
+export default async function Home(): Promise<JSX.Element> {
   const profile = await getProfileData();
-  const projects = await getProjectsData();
-  const resume = await getResumeData()
+  const blog = await getBlogDataList();
 
   return (
-    <div className='pb-14'>
-      <Banner profile={profile} resume={resume}/>
-      <Skills skills={profile.stacks}/>
-      <RecentProject projects={projects}/>
-      <RecentBlog />
+    <div className="pb-6 px-2">
+      <Banner profile={ profile } />
+
+      <Skills skills={ profile.stacks } />
+
+      <RecentProject projects={ profile.featuredPortfolio } />
+
+      <RecentBlog data={ blog } />
     </div>
-  )
+  );
 }

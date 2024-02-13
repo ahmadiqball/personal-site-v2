@@ -1,24 +1,20 @@
-import { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from 'next';
+
+import { getBlogDataList } from '@/app/api/sanity';
+import { BlogCard } from '@/components/blog/blog-card';
 
 export const metadata: Metadata = {
-  title: "Ahmad Iqbal | Resume",
+  title: 'Ahmad Iqbal | Resume',
 };
 
-export default function Blog() {
+export default async function Blog() {
+  const blogList = await getBlogDataList();
+
   return (
-    <div className="min-h-[calc(100vh-208px)] sm:min-h-[calc(100vh-272px)] lg:min-h-[calc(100vh-80px)] min-w-screen flex flex-col items-center justify-center">
-      <h1 className="text-2xl text-bgDark dark:text-white lg:text-4xl pb-6 lg:pb-10 font-semibold">
-        Upcoming blog page...
-      </h1>
-      <Link
-        href="/"
-        className="px-5 py-3 bg-bgDark bg-opacity-25 hover:bg-opacity-50 dark:bg-gray-500 dark:text-white font-medium rounded-md"
-      >
-        Return Home
-      </Link>
+    <div className="min-h-[calc(100vh-208px)] sm:min-h-[calc(100vh-272px)] lg:min-h-[calc(100vh-80px)] min-w-screen">
+
+      <BlogCard data={ blogList } />
+
     </div>
   );
-
-
 }

@@ -1,4 +1,4 @@
-import DarkModeSwitch from "./dark-mode-switch";
+import DarkModeSwitch from './dark-mode-switch';
 
 export default function Header() {
   return (
