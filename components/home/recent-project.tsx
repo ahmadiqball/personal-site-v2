@@ -21,7 +21,7 @@ export function RecentProject({ projects }: { projects: any }): JSX.Element {
 
       <Link
         className="dark:text-white text-center text-xl mt-6 mx-auto underline block"
-        href="/projects"
+        href="/portfolio"
       >
         Find more porjects
       </Link>

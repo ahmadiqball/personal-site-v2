@@ -27,11 +27,11 @@ export async function getProfileData(): Promise<any> {
           slug,
           webUrl,
           repoUrl,
-          "image": images[0]{
+          "images": [images[0]{
             asset->{
               ...,
             }
-          },
+          }],
           _id
         }
       }`,

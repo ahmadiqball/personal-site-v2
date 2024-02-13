@@ -11,7 +11,7 @@ export function Navbar() {
 
   useEffect(() => {
     const currNav = pathname.split("/")[1];
-    if (currNav === "projects") {
+    if (currNav === "portfolio") {
       setActive(0);
     } else if (currNav === "blog") {
       setActive(1);
