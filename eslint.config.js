@@ -17,7 +17,6 @@ module.exports = vinicuncaESLint({
         'react-hooks/rules-of-hooks': 'off',
         'ts/restrict-plus-operands': 'off',
         'vinicunca/cognitive-complexity': 'off',
-        'node/prefer-global/process'
       },
     },
     {

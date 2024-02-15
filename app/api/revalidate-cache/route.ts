@@ -1,28 +1,39 @@
-// api/revalidate/route.tsx
+import type { NextRequest } from 'next/server';
 
-import { revalidateTag } from 'next/cache'
-import type { NextApiRequest } from 'next'
-import type { NextRequest } from 'next/server'
-import { NextResponse } from 'next/server'
+import { revalidateTag } from 'next/cache';
+import { NextResponse } from 'next/server';
+import { parseBody } from 'next-sanity/webhook';
+import process from 'node:process';
 
-export const runtime = 'edge'
+export const runtime = 'edge';
 
 export async function POST(req: NextRequest) {
   try {
+    const { body, isValidSignature } = await parseBody<{
+      _type: string;
+      slug?: string | undefined;
+    }>(req, process.env.SANITY_WEBHOOK_SECRET);
 
-    console.log("🚀 ~ POST ~ req:", await req.json())
+    if (!isValidSignature) {
+      return new Response('Invalid Signature', { status: 401 });
+    }
 
+    if (!body?._type) {
+      return new Response('Bad Request', { status: 400 });
+    }
+
+    revalidateTag(body._type);
 
     return NextResponse.json({
-      status: 200,
-      revalidated: true,
       now: Date.now(),
-    })
+      revalidated: true,
+      status: 200,
+    });
   } catch (err: unknown) {
-    console.error(err)
+    console.error(err);
     if (err instanceof Error) {
-      return new Response(err.message, { status: 500 })
+      return new Response(err.message, { status: 500 });
     }
-    return new Response('Error', { status: 500 })
+    return new Response('Error', { status: 500 });
   }
 }

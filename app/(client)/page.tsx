@@ -5,7 +5,7 @@ import { RecentBlog } from '@/components/home/recent-blog';
 import { RecentProject } from '@/components/home/recent-project';
 import { Skills } from '@/components/home/skills';
 
-import { getBlogDataList, getProfileData, getProjectsData } from '../api/sanity';
+import { getBlogDataList, getProfileData } from '../api/sanity';
 
 export const metadata: Metadata = {
   icons: {

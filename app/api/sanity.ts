@@ -1,5 +1,6 @@
 import { dataset, projectId } from '@/sanity/env';
 import SanityClient from 'next-sanity-client';
+import process from 'node:process';
 
 export const client = new SanityClient({
   apiVersion: (new Date()).toISOString().slice(0, 10),
