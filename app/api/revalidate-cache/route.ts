@@ -3,7 +3,6 @@ import type { NextRequest } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { NextResponse } from 'next/server';
 import { parseBody } from 'next-sanity/webhook';
-import process from 'node:process';
 
 export const runtime = 'edge';
 
