@@ -12,7 +12,8 @@ export async function POST(req: NextRequest) {
       _type: string;
       slug?: string | undefined;
     }>(req, process.env.SANITY_WEBHOOK_SECRET);
-
+    
+    console.log('🚀 ~ POST ~ body, isValidSignature:', body, isValidSignature);
     if (!isValidSignature) {
       return new Response('Invalid Signature', { status: 401 });
     }
