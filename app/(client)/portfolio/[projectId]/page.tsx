@@ -2,11 +2,16 @@ import { getSingleProjectData } from '@/app/api/sanity';
 import { getFormattedDates } from '@/utils/date-formatter';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { BsGlobe } from 'react-icons/bs';
 import { SiGithub } from 'react-icons/si';
 
 export default async function ProjectDetail({ params }: any) {
   const project = await getSingleProjectData(params.projectId);
+
+  if (!project) {
+    notFound();
+  }
 
   return (
     <div className="py-8 lg:flex lg:justify-end min-h-[calc(100vh-80px)] lg:relative">

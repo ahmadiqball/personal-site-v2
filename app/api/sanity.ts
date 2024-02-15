@@ -14,7 +14,10 @@ const stackQuery = 'icon{..., asset->{...,}},';
 export async function getProfileData(): Promise<any> {
   const profile: any = await client.fetch({
     config: {
-      cache: 'no-store',
+      cache: 'force-cache',
+      next: {
+        tags: ['profile'],
+      },
     },
     query: `*[_type == "profile"]{
         ..., 
@@ -42,7 +45,10 @@ export async function getProfileData(): Promise<any> {
 export async function getStacksIcon(): Promise<any> {
   return await client.fetch({
     config: {
-      cache: 'no-store',
+      cache: 'force-cache',
+      next: {
+        tags: ['stacks'],
+      },
     },
     query: `*[_type == "stacks"]{
       ..., ${stackQuery}
@@ -53,7 +59,10 @@ export async function getStacksIcon(): Promise<any> {
 export async function getProjectsData(): Promise<any> {
   const projects: any[] = await client.fetch({
     config: {
-      cache: 'no-store',
+      cache: 'force-cache',
+      next: {
+        tags: ['projects'],
+      },
     },
     query: `*[_type == "projects"]{
       ..., 
@@ -73,7 +82,10 @@ export async function getProjectsData(): Promise<any> {
 export async function getSingleProjectData(slug: string): Promise<any> {
   const project: any = await client.fetch({
     config: {
-      cache: 'no-store',
+      cache: 'force-cache',
+      next: {
+        tags: ['projects'],
+      },
     },
     query: `*[_type == "projects" && slug.current == "${slug}"]{
       ..., 
@@ -93,7 +105,10 @@ export async function getSingleProjectData(slug: string): Promise<any> {
 export async function getResumeData(): Promise<any> {
   const resume: any = await client.fetch({
     config: {
-      cache: 'no-store',
+      cache: 'force-cache',
+      next: {
+        tags: ['resume'],
+      },
     },
     query: `*[_type == "resume"]{
       ..., 
@@ -112,7 +127,10 @@ export async function getResumeData(): Promise<any> {
 export async function getBlogPostData(slug: string): Promise<any> {
   const blogPost: any = await client.fetch({
     config: {
-      cache: 'no-cache',
+      cache: 'force-cache',
+      next: {
+        tags: ['blog'],
+      },
     },
     query: `*[_type == "blog" && slug.current == "${slug}"][0]{
       ...,
@@ -141,7 +159,10 @@ export async function getBlogPostData(slug: string): Promise<any> {
 export async function getBlogDataList() {
   const blogPostList: any = await client.fetch({
     config: {
-      cache: 'no-store',
+      cache: 'force-cache',
+      next: {
+        tags: ['blog'],
+      },
     },
     query: `*[_type == "blog"]{
       mainImage{
