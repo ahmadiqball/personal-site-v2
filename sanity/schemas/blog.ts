@@ -31,6 +31,16 @@ export default defineType({
           title: 'Alternative Text',
           type: 'string',
         },
+        {
+          name: 'source',
+          title: 'Image Source',
+          type: 'string',
+        },
+        {
+          name: 'sourceName',
+          title: 'Image Source Name',
+          type: 'string',
+        },
       ],
       name: 'mainImage',
       options: {

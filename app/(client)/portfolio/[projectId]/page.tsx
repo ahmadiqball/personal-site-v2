@@ -1,4 +1,4 @@
-import { getSingleProjectData } from '@/app/api/sanity';
+import { getSingleProjectData } from '@/sanity/get-data';
 import { getFormattedDates } from '@/utils/date-formatter';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';

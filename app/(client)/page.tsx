@@ -4,14 +4,13 @@ import { Banner } from '@/components/home/banner';
 import { RecentBlog } from '@/components/home/recent-blog';
 import { RecentProject } from '@/components/home/recent-project';
 import { Skills } from '@/components/home/skills';
-
-import { getBlogDataList, getProfileData } from '../api/sanity';
+import { getBlogDataList, getProfileData } from '@/sanity/get-data';
 
 export const metadata: Metadata = {
   icons: {
     icon: 'favicon.ico',
   },
-  title: 'Ahmad Iqbal | Home',
+  title: 'Ahmad Iqbal',
 };
 
 export default async function Home(): Promise<JSX.Element> {

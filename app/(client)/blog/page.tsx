@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
-import { getBlogDataList } from '@/app/api/sanity';
 import { BlogCard } from '@/components/blog/blog-card';
+import { getBlogDataList } from '@/sanity/get-data';
 
 export const metadata: Metadata = {
-  title: 'Ahmad Iqbal | Resume',
+  title: 'Ahmad Iqbal | Blog',
 };
 
 export default async function Blog() {

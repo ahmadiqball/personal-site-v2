@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
-import { getResumeData } from '@/app/api/sanity';
 import EducationsField from '@/components/resume/educations-field';
 import WorksField from '@/components/resume/works-field';
+import { getResumeData } from '@/sanity/get-data';
 import Image from 'next/image';
 
 export const metadata: Metadata = {

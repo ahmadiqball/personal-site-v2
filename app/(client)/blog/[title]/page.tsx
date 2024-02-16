@@ -1,7 +1,8 @@
-import { getBlogPostData } from '@/app/api/sanity';
 import { BlogPostArticle } from '@/components/blog/blog-post-article';
+import { getBlogPostData } from '@/sanity/get-data';
 import { getFormattedDate } from '@/utils/date-formatter';
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export default async function BlogPost({ params }: any) {
@@ -13,15 +14,31 @@ export default async function BlogPost({ params }: any) {
 
   return (
     <div className="relative max-w-[875px] mx-auto">
-      <Image
-        alt={ article.mainImage.alt }
-        blurDataURL={ article.mainImage.asset.metadata.blurHash }
-        className="w-full object-cover rounded-xl md:max-w-[700px] mx-auto"
-        height={ 400 }
-        placeholder="blur"
-        src={ article.mainImage.asset.url }
-        width={ 400 }
-      />
+      <title>{ article.title }</title>
+
+      <div className="md:max-w-[700px] mx-auto mt-5 mb-3">
+        <Image
+          alt={ article.mainImage.alt }
+          blurDataURL={ article.mainImage.asset.metadata.blurHash }
+          className="w-full rounded-xl"
+          height={ 400 }
+          placeholder="blur"
+          src={ article.mainImage.asset.url }
+          width={ 400 }
+        />
+
+        { article.mainImage.source
+          ? (
+            <span className="text-xs pt-1 italic flex items-center gap-1 text-bgDark dark:text-bgLight">
+              Image source:
+
+              <Link className="underline text-[#3f4881] dark:text-[#d1d6f6] line-clamp-1 max-w-[400px]" href={ article.mainImage.source } target="_blank">
+                { article.mainImage.sourceName ? article.mainImage.sourceName : article.mainImage.source }
+              </Link>
+            </span>
+            )
+          : null }
+      </div>
 
       <div className="px-1.5 text-bgDark dark:text-bgLight">
         <div className="pb-6">

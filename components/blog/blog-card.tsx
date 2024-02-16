@@ -28,9 +28,17 @@ export function BlogCard({ data }: any) {
             <h5 className="text-white font-semibold text-xl">{ item.title }</h5>
 
             <div className="flex items-center text-xs gap-4 pt-1 opacity-70">
-              <span className='flex items-center gap-1'><FaRegCalendarAlt className='mb-[1px]'/>{ getFormattedDate(item.publishedAt) }</span>
+              <span className="flex items-center gap-1">
+                <FaRegCalendarAlt className="mb-[1px]" />
 
-              <span className='flex items-center gap-1'><FaRegClock className='mb-[1px]' />{ `${Math.round(item.char / 1000)} minutes read` }</span>
+                { getFormattedDate(item.publishedAt) }
+              </span>
+
+              <span className="flex items-center gap-1">
+                <FaRegClock className="mb-[1px]" />
+
+                { `${Math.round(item.char / 1000)} minutes read` }
+              </span>
             </div>
           </div>
         </Link>
