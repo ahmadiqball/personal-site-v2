@@ -20,7 +20,7 @@ export default async function BlogPost({ params }: any) {
         <Image
           alt={ article.mainImage.alt }
           blurDataURL={ article.mainImage.asset.metadata.blurHash }
-          className="w-full rounded-xl"
+          className="w-full rounded-xl max-h-[400px]"
           height={ 400 }
           placeholder="blur"
           src={ article.mainImage.asset.url }

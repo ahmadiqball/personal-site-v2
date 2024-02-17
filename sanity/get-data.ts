@@ -1,9 +1,12 @@
-import { dataset, projectId } from '@/sanity/env';
-import SanityClient from 'next-sanity-client';
+import type { FilteredResponseQueryOptions } from 'next-sanity';
 
-export const client = new SanityClient({
+import { dataset, projectId } from '@/sanity/env';
+import { createClient } from 'next-sanity';
+
+export const client = createClient({
   apiVersion: (new Date()).toISOString().slice(0, 10),
   dataset,
+  perspective: 'published',
   projectId,
   token: process.env.SANITY_SECRET_TOKEN,
   useCdn: false,
@@ -11,8 +14,12 @@ export const client = new SanityClient({
 
 const stackQuery = 'icon{..., asset->{...,}},';
 
+async function sanityBaseFetch({ config, query }: { config: FilteredResponseQueryOptions; query: string }) {
+  return await client.fetch(query, {}, config);
+}
+
 export async function getProfileData(): Promise<any> {
-  const profile: any = await client.fetch({
+  const profile: any = await sanityBaseFetch({
     config: {
       cache: 'force-cache',
       next: {
@@ -43,7 +50,7 @@ export async function getProfileData(): Promise<any> {
 }
 
 export async function getStacksIcon(): Promise<any> {
-  return await client.fetch({
+  return await sanityBaseFetch({
     config: {
       cache: 'force-cache',
       next: {
@@ -57,7 +64,7 @@ export async function getStacksIcon(): Promise<any> {
 }
 
 export async function getProjectsData(): Promise<any> {
-  const projects: any[] = await client.fetch({
+  const projects: any[] = await sanityBaseFetch({
     config: {
       cache: 'force-cache',
       next: {
@@ -80,7 +87,7 @@ export async function getProjectsData(): Promise<any> {
 }
 
 export async function getSingleProjectData(slug: string): Promise<any> {
-  const project: any = await client.fetch({
+  const project: any = await sanityBaseFetch({
     config: {
       cache: 'force-cache',
       next: {
@@ -103,7 +110,7 @@ export async function getSingleProjectData(slug: string): Promise<any> {
 }
 
 export async function getResumeData(): Promise<any> {
-  const resume: any = await client.fetch({
+  const resume: any = await sanityBaseFetch({
     config: {
       cache: 'force-cache',
       next: {
@@ -125,7 +132,7 @@ export async function getResumeData(): Promise<any> {
 }
 
 export async function getBlogPostData(slug: string): Promise<any> {
-  const blogPost: any = await client.fetch({
+  const blogPost: any = await sanityBaseFetch({
     config: {
       cache: 'force-cache',
       next: {
@@ -157,7 +164,7 @@ export async function getBlogPostData(slug: string): Promise<any> {
 }
 
 export async function getBlogDataList() {
-  const blogPostList: any = await client.fetch({
+  const blogPostList: any = await sanityBaseFetch({
     config: {
       cache: 'force-cache',
       next: {

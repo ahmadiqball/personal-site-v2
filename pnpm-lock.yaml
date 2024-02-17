@@ -14,9 +14,6 @@ dependencies:
   '@sanity/code-input':
     specifier: ^4.1.2
     version: 4.1.2(@babel/runtime@7.23.9)(@codemirror/lint@6.5.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.29.1)(styled-components@5.2.3)
-  '@sanity/image-url':
-    specifier: ^1.0.2
-    version: 1.0.2
   '@sanity/vision':
     specifier: ^3.18.1
     version: 3.29.1(@babel/runtime@7.23.9)(@codemirror/lint@6.5.0)(@codemirror/state@6.4.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@5.2.3)
@@ -47,9 +44,6 @@ dependencies:
   next-sanity:
     specifier: ^8.0.0
     version: 8.0.0(@sanity/client@6.13.3)(@sanity/icons@2.10.2)(@sanity/types@3.29.1)(@sanity/ui@2.0.2)(next@14.1.0)(react@18.2.0)(sanity@3.29.1)(styled-components@5.2.3)
-  next-sanity-client:
-    specifier: ^1.0.7
-    version: 1.0.8(next@14.1.0)
   postcss:
     specifier: 8.4.23
     version: 8.4.23
@@ -68,9 +62,6 @@ dependencies:
   sanity:
     specifier: ^3.18.1
     version: 3.29.1(@types/node@20.2.1)(@types/react@18.2.6)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.2.3)
-  styled-components:
-    specifier: '5.2'
-    version: 5.2.3(@babel/core@7.23.9)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
   tailwindcss:
     specifier: 3.3.2
     version: 3.3.2
@@ -625,6 +616,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
 
   /@emotion/stylis@0.8.5:
@@ -5816,14 +5808,6 @@ packages:
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
-
-  /next-sanity-client@1.0.8(next@14.1.0):
-    resolution: {integrity: sha512-vpJMIsEN9WTuciLWjaGfSfEZChivMf2522sS+tjl6GtbNI8reU+5R29Zi5FGP0/pfieGlaiS3kPF6hIrFCrhCQ==}
-    peerDependencies:
-      next: latest
-    dependencies:
-      next: 14.1.0(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)
-    dev: false
 
   /next-sanity@8.0.0(@sanity/client@6.13.3)(@sanity/icons@2.10.2)(@sanity/types@3.29.1)(@sanity/ui@2.0.2)(next@14.1.0)(react@18.2.0)(sanity@3.29.1)(styled-components@5.2.3):
     resolution: {integrity: sha512-XT6PTXvivwqUZ7q7qMr+aptyyzXs0MiDIlRLusYlYHsdBrW4iEwfWYNwUqB1r9csczjeEk02X4MxMayrg47Vjg==}
