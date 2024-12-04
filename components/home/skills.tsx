@@ -7,10 +7,10 @@ export function Skills({ skills }: { skills: any }): JSX.Element {
         Skills
       </h1>
 
-      <div className="grid grid-cols-5 items-center justify-center gap-4 sm:grid-cols-7 lg:grid-cols-10">
+      <div className="flex flex-wrap gap-8 bg-white dark:bg-bgDark bg-opacity-20 dark:bg-opacity-30 p-8 rounded-xl">
         { skills.map((item: any) => (
           <div
-            className="relative h-8 w-8 grayscale invert hover:grayscale-0 hover:invert-0"
+            className="relative h-8 w-8 grayscale invert hover:grayscale-0 hover:invert-0 transition-all duration-300 cursor-pointer"
             key={ item._id }
           >
             <Image

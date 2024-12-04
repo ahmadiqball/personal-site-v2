@@ -17,12 +17,12 @@ export function BlogCard({ data }: any) {
           <Image
             alt={ item.mainImage.alt }
             blurDataURL={ item.mainImage.asset.metadata.blurHash }
-            className="group-hover:scale-110 transition-all duration-300 object-cover"
+            className="group-hover:scale-110 transition-transform duration-300 object-cover ease-in"
             fill
             src={ item.mainImage.asset.url }
           />
 
-          <div className="absolute top-0 w-full h-full flex flex-col justify-end bg-black/50 p-3">
+          <div className="absolute top-0 w-full h-full flex flex-col justify-end bg-black/50 p-3 group-hover:bg-black/70 transition-colors duration-300">
             <span className="opacity-80 text-[15px]">{ item.type }</span>
 
             <h5 className="text-white font-semibold text-xl">{ item.title }</h5>

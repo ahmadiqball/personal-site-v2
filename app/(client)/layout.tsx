@@ -1,5 +1,4 @@
 import LayoutClient from '@/components/layout/layout-client';
-import classNames from 'classnames';
 import { Inter } from 'next/font/google';
 
 import './globals.css';
@@ -16,9 +15,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const gradientClass
-    = 'bg-[radial-gradient(circle_at_-70%,rgba(95,32,181,0.5)_0%,rgba(95,32,181,0.1)_1%,rgba(0,0,0,0)_80%)] dark:bg-[radial-gradient(circle_at_-70%,rgba(95,32,181,0.5)_0%,rgba(95,32,181,0.3)_1%,rgba(0,0,0,0)_80%)]';
-
   return (
     <html lang="en">
       <head></head>
@@ -29,14 +25,11 @@ export default function RootLayout({
         <LayoutClient />
 
         <main className="bg-gradient-to-r bg-[#ede6f2] dark:bg-black box-border min-h-screen w-screen max-w-full overflow-hidden pt-20 pb-32 px-2.5 sm:px-10 sm:pb-48 lg:py-10 lg:pr-40 lg:pl-16">
-          <div
-            className={ classNames(
-              'fixed top-0 left-0 w-full h-screen',
-              gradientClass,
-            ) }
-          />
+          <img className="fixed left-1/3 -top-3/4 sm:-left-1/2 sm:top-0 min-w-[200vw] h-[200vh] md:h-screen object-center blur-[160px] sm:blur-[300px] opacity-80 rotate-[55deg] md:rotate-[20deg]  hidden dark:block" src="/assets/wave-black.png" />
 
-          <div className="relative z-10">{ children }</div>
+          <img className="fixed left-0 top-0 sm:-left-20 min-w-[100vw] h-screen blur-[160px] sm:blur-[200px] opacity-70 sm:opacity-30 dark:hidden" src="/assets/wave-white.png" />
+
+          <div className="relative z-10 max-w-7xl mx-auto">{ children }</div>
         </main>
       </body>
     </html>

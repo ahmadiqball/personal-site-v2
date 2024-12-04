@@ -1,9 +1,6 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'projects',
-  title: 'Projects',
-  type: 'document',
   fields: [
     defineField({
       name: 'projectName',
@@ -12,30 +9,30 @@ export default defineType({
     }),
     defineField({
       name: 'slug',
+      options: {
+        maxLength: 96,
+        source: 'projectName',
+      },
       title: 'Slug',
       type: 'slug',
+    }),
+    defineField({
+      name: 'startDate',
+      title: 'Start Date',
+      type: 'date',
+    }),
+    defineField({
+      name: 'endDate',
+      title: 'End Date',
+      type: 'date',
+    }),
+    defineField({
+      name: 'type',
       options: {
-        source: 'projectName',
-        maxLength: 96,
+        list: ['Front End', 'Back End', 'Fullstack', 'Data Analysis', 'Data Science', 'Data Structure', 'Algorithm'],
       },
-    }),
-    defineField({
-        name: 'startDate',
-        title: 'Start Date',
-        type: 'date',
-    }),
-    defineField({
-        name: 'endDate',
-        title: 'End Date',
-        type: 'date',
-    }),
-    defineField({
-        name: 'type',
-        title: 'Types',
-        type: 'string',
-        options: {
-            list: ['Front End', 'Back End', 'Fullstack', 'Data Analysis', 'Data Science']
-        }
+      title: 'Types',
+      type: 'string',
     }),
     defineField({
       name: 'webUrl',
@@ -54,46 +51,49 @@ export default defineType({
     }),
     defineField({
       name: 'stacks',
-      title: 'Stacks',
-      type: 'array',
       of: [
         {
+          to: [{ type: 'stacks' }],
           type: 'reference',
-          to: [{type: 'stacks'}]
-        }
-      ]
+        },
+      ],
+      title: 'Stacks',
+      type: 'array',
     }),
     defineField({
       name: 'features',
+      of: [{ type: 'string' }],
       title: 'Features',
       type: 'array',
-      of: [{type: 'string'}]
     }),
     defineField({
       name: 'description',
-      title: 'Description',
-      type: 'array',
       of: [
         {
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
           lists: [],
+          styles: [{ title: 'Normal', value: 'normal' }],
+          type: 'block',
         },
       ],
+      title: 'Description',
+      type: 'array',
     }),
     {
       name: 'images',
-      title: 'Images',
-      type: 'array',
       of: [{
         name: 'image',
-        type: 'image',
         options: {
           metadata: [
             'blurhash',
-          ]
-        }
-      }]
+          ],
+        },
+        type: 'image',
+      }],
+      title: 'Images',
+      type: 'array',
     },
   ],
-})
+  name: 'projects',
+  title: 'Projects',
+  type: 'document',
+});

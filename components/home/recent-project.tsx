@@ -20,7 +20,7 @@ export function RecentProject({ projects }: { projects: any }): JSX.Element {
       </div>
 
       <Link
-        className="dark:text-white text-center text-xl mt-6 mx-auto underline block"
+        className="dark:text-gray-400 text-gray-500 hover:text-bgDark text-center text-lg mt-12 mx-auto underline block dark:hover:text-gray-100 transition-colors duration-300"
         href="/portfolio"
       >
         Find more porjects

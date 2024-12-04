@@ -12,11 +12,11 @@ export default function ProjectCard({ project }: any) {
 
   return (
     <div
-      className="relative px-4 py-4 rounded-md overflow-hidden z-10 hover:cursor-pointer w-full grow "
+      className="relative px-4 py-4 rounded-md overflow-hidden z-10 hover:cursor-pointer w-full grow group"
       key={ project._id }
       onClick={ () => router.push(`/portfolio/${project.slug.current}`) }
     >
-      <div className="absolute -z-10 bg-black dark:bg-white w-full h-full top-0 left-0 opacity-10 backdrop-blur-3xl" />
+      <div className="absolute -z-10 bg-white dark:bg-bgDark w-full h-full top-0 left-0 opacity-20 group-hover:opacity-40 dark:group-hover:opacity-30 dark:opacity-50 backdrop-blur-3xl transition-opacity duration-300 ease-in" />
 
       <Image
         alt={ project.images[0].asset.url }
@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: any) {
         { project.projectName }
       </h4>
 
-      <div className="line-clamp-4 text-bgDark dark:text-gray-100">
+      <div className="line-clamp-4 text-bgDark dark:text-gray-200 text-sm">
         <PortableText value={ project.description } />
       </div>
 
