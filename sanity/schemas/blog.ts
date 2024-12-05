@@ -19,7 +19,7 @@ export default defineType({
     defineField({
       name: 'type',
       options: {
-        list: ['Front End', 'Back End', 'Fullstack', 'Data Analysis', 'Data Science'],
+        list: ['Front End', 'Back End', 'Fullstack', 'Data Analysis', 'Data Science', 'Algorithm', 'Data Structure', 'Software Engineering'],
       },
       title: 'Types',
       type: 'string',

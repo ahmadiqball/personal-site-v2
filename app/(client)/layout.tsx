@@ -25,9 +25,9 @@ export default function RootLayout({
         <LayoutClient />
 
         <main className="bg-gradient-to-r bg-[#ede6f2] dark:bg-black box-border min-h-screen w-screen max-w-full overflow-hidden pt-20 pb-32 px-2.5 sm:px-10 sm:pb-48 lg:py-10 lg:pr-40 lg:pl-16">
-          <img className="fixed left-1/3 -top-3/4 sm:-left-1/2 sm:top-0 min-w-[200vw] h-[200vh] md:h-screen object-center blur-[160px] sm:blur-[300px] opacity-80 rotate-[55deg] md:rotate-[20deg]  hidden dark:block" src="/assets/wave-black.png" />
+          <img className="fixed left-1/3 -top-3/4 sm:-left-1/2 sm:top-0 min-w-[200vw] h-[200vh] md:h-screen object-center blur-[160px] sm:blur-[280px] opacity-80 sm:opacity-100 rotate-[55deg] md:rotate-[20deg]  hidden dark:block" src="/assets/wave-black.jpg" />
 
-          <img className="fixed left-0 top-0 sm:-left-20 min-w-[100vw] h-screen blur-[160px] sm:blur-[200px] opacity-70 sm:opacity-30 dark:hidden" src="/assets/wave-white.png" />
+          <img className="fixed left-0 top-0 sm:-left-20 min-w-[100vw] h-screen blur-[160px] sm:blur-[200px] opacity-70 sm:opacity-30 dark:hidden" src="/assets/wave-white.jpg" />
 
           <div className="relative z-10 max-w-7xl mx-auto">{ children }</div>
         </main>

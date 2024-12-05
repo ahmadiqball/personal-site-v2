@@ -39,7 +39,7 @@ export default function ProjectCard({ project }: any) {
           { project.webUrl
             ? (
               <a href={ project.webUrl }>
-                <BsGlobe className="text-xl hover:pointer text-gray-500 hover:text-gray-800 dark:hover:text-white" />
+                <BsGlobe className="text-xl hover:pointer text-gray-500 hover:text-gray-800 dark:hover:text-white transition-colors duration-300" />
               </a>
               )
             : null }
@@ -47,7 +47,7 @@ export default function ProjectCard({ project }: any) {
           { project.repoUrl
             ? (
               <a href={ project.repoUrl }>
-                <SiGithub className="text-xl hover:pointer text-gray-500 hover:text-gray-800 dark:hover:text-white" />
+                <SiGithub className="text-xl hover:pointer text-gray-500 hover:text-gray-800 dark:hover:text-white transition-colors duration-300" />
               </a>
               )
             : null }
