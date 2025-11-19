@@ -8,7 +8,7 @@ export const client = createClient({
   dataset,
   perspective: 'published',
   projectId,
-  token: process.env.SANITY_SECRET_TOKEN,
+  token: process.env.NEXT_SANITY_SECRET_TOKEN,
   useCdn: false,
 });
 

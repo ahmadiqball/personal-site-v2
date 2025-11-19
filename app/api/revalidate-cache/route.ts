@@ -1,8 +1,8 @@
 import type { NextRequest } from 'next/server';
 
+import { parseBody } from 'next-sanity/webhook';
 import { revalidateTag } from 'next/cache';
 import { NextResponse } from 'next/server';
-import { parseBody } from 'next-sanity/webhook';
 
 export const runtime = 'edge';
 
@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     const { body, isValidSignature } = await parseBody<{
       _type: string;
       slug?: string | undefined;
-    }>(req, process.env.SANITY_WEBHOOK_SECRET);
+    }>(req, process.env.NEXT_SANITY_WEBHOOK_SECRET);
 
     if (!isValidSignature) {
       return new Response('Invalid Signature', { status: 401 });
