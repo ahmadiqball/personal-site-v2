@@ -64,7 +64,7 @@ export async function getStacksIcon(): Promise<any> {
 }
 
 export async function getProjectsData(): Promise<any> {
-  const projects: any[] = await sanityBaseFetch({
+  const projects: Array<any> = await sanityBaseFetch({
     config: {
       cache: 'force-cache',
       next: {
