@@ -51,7 +51,7 @@ export function HomeCelestialInstrument({
   return (
     <div
       aria-hidden="true"
-      className="relative z-[2] flex h-[480px] animate-reveal items-center justify-center opacity-0 [animation-delay:500ms] [animation-duration:1200ms] min-[981px]:h-[600px]"
+      className="relative z-[2] flex h-[360px] origin-center scale-[0.55] animate-reveal items-center justify-center opacity-0 [animation-delay:500ms] [animation-duration:1200ms] min-[400px]:h-[400px] min-[400px]:scale-[0.62] min-[480px]:h-[460px] min-[480px]:scale-[0.75] min-[640px]:h-[540px] min-[640px]:scale-[0.88] min-[981px]:h-[600px] min-[981px]:scale-100"
     >
       {/* atom shells */}
       <div className={styles.armillary}>
@@ -73,7 +73,7 @@ export function HomeCelestialInstrument({
 
       {/* twinkling star field */}
       <svg
-        className="pointer-events-none absolute inset-0 m-auto h-[420px] w-[420px] min-[981px]:h-[560px] min-[981px]:w-[560px]"
+        className="pointer-events-none absolute inset-0 m-auto h-[560px] w-[560px]"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 560 560"
       >
@@ -92,9 +92,9 @@ export function HomeCelestialInstrument({
       <div className={`${styles.etrack} ${styles.e4}`}><span className={styles.planet} /></div>
 
       {/* arched portrait plate */}
-      <div className="relative z-[4] w-[236px] min-[981px]:w-72">
+      <div className="relative z-[4] w-72">
         <div
-          className="relative h-[322px] w-[236px] overflow-hidden rounded-[118px_118px_8px_8px] border border-candleflame shadow-plate min-[981px]:h-[392px] min-[981px]:w-72 min-[981px]:rounded-[144px_144px_10px_10px]"
+          className="relative h-[392px] w-72 overflow-hidden rounded-[144px_144px_10px_10px] border border-candleflame shadow-plate"
           style={{ background: MASK_GRADIENT }}
         >
           { portraitUrl && (

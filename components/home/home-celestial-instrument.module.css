@@ -46,11 +46,6 @@
 .cw { transform-box: fill-box; transform-origin: center; animation: gearCw 20s linear infinite; }
 .ccw { transform-box: fill-box; transform-origin: center; animation: gearCcw 15s linear infinite; }
 
-/* ---- responsive shrink (≤980px) ---- */
-@media (max-width: 980px) {
-  .armillary, .arOuter, .ticks, .orbitTrack { width: 400px; height: 400px; }
-  .arEq, .e3 { width: 350px; height: 350px; }
-  .arS1, .e1 { width: 350px; height: 350px; }
-  .arS2, .e2 { width: 300px; height: 300px; }
-  .arS3, .e4 { width: 380px; height: 380px; }
-}
+/* The whole assembly is scaled to fit narrow screens on the root element (in the
+   component), keeping every part in proportion — so no per-element mobile
+   overrides are needed here. */
