@@ -57,6 +57,28 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'role',
+      title: 'Role',
+      description: 'Your role on the project, e.g. "Frontend Engineer, lead".',
+      type: 'string',
+    }),
+    defineField({
+      name: 'impact',
+      title: 'Impact',
+      description: 'Headline metrics shown in the case-study sidebar.',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'value', title: 'Value', type: 'string' },
+            { name: 'label', title: 'Label', type: 'string' },
+          ],
+          preview: { select: { title: 'value', subtitle: 'label' } },
+        },
+      ],
+    }),
+    defineField({
       name: 'webUrl',
       title: 'Website URL',
       type: 'url',
