@@ -13,7 +13,7 @@ const WAVES = [
   'M 0 8 Q 6 1 12 8 T 24 8 Q 32 14 40 8 T 50 8',
 ];
 
-export function HomeWritingTeaser({ posts }: { posts?: any[] }) {
+export function HomeWritingTeaser({ posts }: { posts?: Array<any> }) {
   const rows = (posts ?? []).slice(0, 3);
 
   return (
@@ -44,10 +44,18 @@ export function HomeWritingTeaser({ posts }: { posts?: any[] }) {
                 <line x1="210" x2="210" y1="0" y2="200" />
               </g>
               <g fill="#EDEAE3">
-                <circle cx="50" cy="40" r="2" /><circle cx="80" cy="55" r="1.4" /><circle cx="130" cy="35" r="2.4" />
-                <circle cx="160" cy="60" r="1.6" /><circle cx="200" cy="45" r="1.2" /><circle cx="120" cy="100" r="1.8" />
-                <circle cx="160" cy="135" r="2.2" /><circle cx="200" cy="120" r="1.4" /><circle cx="230" cy="155" r="1.6" />
-                <circle cx="70" cy="160" r="1.2" /><circle cx="40" cy="130" r="1" /><circle cx="240" cy="90" r="1" />
+                <circle cx="50" cy="40" r="2" />
+                <circle cx="80" cy="55" r="1.4" />
+                <circle cx="130" cy="35" r="2.4" />
+                <circle cx="160" cy="60" r="1.6" />
+                <circle cx="200" cy="45" r="1.2" />
+                <circle cx="120" cy="100" r="1.8" />
+                <circle cx="160" cy="135" r="2.2" />
+                <circle cx="200" cy="120" r="1.4" />
+                <circle cx="230" cy="155" r="1.6" />
+                <circle cx="70" cy="160" r="1.2" />
+                <circle cx="40" cy="130" r="1" />
+                <circle cx="240" cy="90" r="1" />
               </g>
               <g fill="none" opacity="0.7" stroke="#C9A961" strokeWidth="0.5">
                 <path d="M 50 40 L 80 55 L 130 35 L 160 60 L 200 45" />

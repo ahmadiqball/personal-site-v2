@@ -86,116 +86,116 @@ export function HomeCelestialInstrument({
         className="relative flex h-[600px] w-[560px] shrink-0 items-center justify-center"
         style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}
       >
-      {/* atom shells */}
-      <div className={styles.armillary}>
-        <span className={`${styles.ar} ${styles.arOuter}`} />
-        <span className={`${styles.ar} ${styles.arEq}`} />
-        <span className={`${styles.ar} ${styles.arS1}`} />
-        <span className={`${styles.ar} ${styles.arS2}`} />
-        <span className={`${styles.ar} ${styles.arS3}`} />
-      </div>
+        {/* atom shells */}
+        <div className={styles.armillary}>
+          <span className={`${styles.ar} ${styles.arOuter}`} />
+          <span className={`${styles.ar} ${styles.arEq}`} />
+          <span className={`${styles.ar} ${styles.arS1}`} />
+          <span className={`${styles.ar} ${styles.arS2}`} />
+          <span className={`${styles.ar} ${styles.arS3}`} />
+        </div>
 
-      {/* graduated watch tick-ring */}
-      <svg className={styles.ticks} preserveAspectRatio="xMidYMid meet" viewBox="0 0 540 540">
-        <g opacity="0.5" stroke="#C9A961" strokeWidth="0.6">
-          { ticks.map((t, i) => (
-            <line key={i} x1={t.x1} x2={t.x2} y1={t.y1} y2={t.y2} />
-          )) }
-        </g>
-      </svg>
+        {/* graduated watch tick-ring */}
+        <svg className={styles.ticks} preserveAspectRatio="xMidYMid meet" viewBox="0 0 540 540">
+          <g opacity="0.5" stroke="#C9A961" strokeWidth="0.6">
+            { ticks.map((t, i) => (
+              <line key={i} x1={t.x1} x2={t.x2} y1={t.y1} y2={t.y2} />
+            )) }
+          </g>
+        </svg>
 
-      {/* twinkling star field */}
-      <svg
-        className="pointer-events-none absolute inset-0 m-auto h-[560px] w-[560px]"
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 560 560"
-      >
-        <g fill="#EDEAE3">
-          { stars.map((s, i) => (
-            <circle className={styles.tw} cx={s.cx} cy={s.cy} key={i} r={s.r} style={{ animationDelay: s.delay }} />
-          )) }
-        </g>
-      </svg>
-
-      {/* orbiting bodies */}
-      <div className={styles.orbitTrack}><span className={styles.planet} /></div>
-      <div className={`${styles.etrack} ${styles.e1}`}><span className={styles.planet} /></div>
-      <div className={`${styles.etrack} ${styles.e2}`}><span className={styles.planet} /></div>
-      <div className={`${styles.etrack} ${styles.e3}`}><span className={styles.planet} /></div>
-      <div className={`${styles.etrack} ${styles.e4}`}><span className={styles.planet} /></div>
-
-      {/* arched portrait plate */}
-      <div className="relative z-[4] w-72">
-        <div
-          className="relative h-[392px] w-72 overflow-hidden rounded-[144px_144px_10px_10px] border border-candleflame shadow-plate"
-          style={{ background: MASK_GRADIENT }}
+        {/* twinkling star field */}
+        <svg
+          className="pointer-events-none absolute inset-0 m-auto h-[560px] w-[560px]"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 560 560"
         >
-          { portraitUrl && (
-            <img alt={portraitAlt} className="relative z-[1] h-full w-full object-cover object-center" src={portraitUrl} />
-          ) }
+          <g fill="#EDEAE3">
+            { stars.map((s, i) => (
+              <circle className={styles.tw} cx={s.cx} cy={s.cy} key={i} r={s.r} style={{ animationDelay: s.delay }} />
+            )) }
+          </g>
+        </svg>
 
+        {/* orbiting bodies */}
+        <div className={styles.orbitTrack}><span className={styles.planet} /></div>
+        <div className={`${styles.etrack} ${styles.e1}`}><span className={styles.planet} /></div>
+        <div className={`${styles.etrack} ${styles.e2}`}><span className={styles.planet} /></div>
+        <div className={`${styles.etrack} ${styles.e3}`}><span className={styles.planet} /></div>
+        <div className={`${styles.etrack} ${styles.e4}`}><span className={styles.planet} /></div>
+
+        {/* arched portrait plate */}
+        <div className="relative z-[4] w-72">
           <div
-            className="absolute inset-0 flex items-end justify-center pb-[22px] font-mono text-[9px] uppercase tracking-[0.2em] text-[rgba(237,234,227,0.55)]"
-            style={{ backgroundImage: PLACEHOLDER_BG }}
+            className="relative h-[392px] w-72 overflow-hidden rounded-[144px_144px_10px_10px] border border-candleflame shadow-plate"
+            style={{ background: MASK_GRADIENT }}
           >
-            — portrait
+            { portraitUrl && (
+              <img alt={portraitAlt} className="relative z-[1] h-full w-full object-cover object-center" src={portraitUrl} />
+            ) }
+
+            <div
+              className="absolute inset-0 flex items-end justify-center pb-[22px] font-mono text-[9px] uppercase tracking-[0.2em] text-[rgba(237,234,227,0.55)]"
+              style={{ backgroundImage: PLACEHOLDER_BG }}
+            >
+              — portrait
+            </div>
+          </div>
+
+          <div className="absolute bottom-4 left-1/2 z-[3] w-max -translate-x-1/2 border-[0.5px] border-gold-line bg-ink-night/[0.86] px-3.5 py-[7px] text-center backdrop-blur-[4px]">
+            <div className="font-mono text-[8px] tracking-[0.15em] text-candleflame">{ plateNum }</div>
+            <div className="mt-0.5 font-cinzel text-[11px] font-medium uppercase tracking-[0.06em] text-vellum">{ plateTitle }</div>
+            <div className="mt-0.5 font-mono text-[8px] text-stone-600">{ plateMeta }</div>
           </div>
         </div>
 
-        <div className="absolute bottom-4 left-1/2 z-[3] w-max -translate-x-1/2 border-[0.5px] border-gold-line bg-ink-night/[0.86] px-3.5 py-[7px] text-center backdrop-blur-[4px]">
-          <div className="font-mono text-[8px] tracking-[0.15em] text-candleflame">{ plateNum }</div>
-          <div className="mt-0.5 font-cinzel text-[11px] font-medium uppercase tracking-[0.06em] text-vellum">{ plateTitle }</div>
-          <div className="mt-0.5 font-mono text-[8px] text-stone-600">{ plateMeta }</div>
-        </div>
-      </div>
-
-      {/* corner gears */}
-      <svg className={`${styles.gear} ${styles.g1}`} viewBox="0 0 60 60">
-        <g className={styles.cw} fill="none" stroke="#C9A961" strokeWidth="1" transform="translate(30 30)">
-          <circle r="16" />
-          <circle r="6" />
-          <g strokeWidth="2">
-            <line y1="-16" y2="-24" />
-            <line y1="16" y2="24" />
-            <line x1="-16" x2="-24" />
-            <line x1="16" x2="24" />
-            <line x1="-11" x2="-17" y1="-11" y2="-17" />
-            <line x1="11" x2="17" y1="11" y2="17" />
-            <line x1="11" x2="17" y1="-11" y2="-17" />
-            <line x1="-11" x2="-17" y1="11" y2="17" />
+        {/* corner gears */}
+        <svg className={`${styles.gear} ${styles.g1}`} viewBox="0 0 60 60">
+          <g className={styles.cw} fill="none" stroke="#C9A961" strokeWidth="1" transform="translate(30 30)">
+            <circle r="16" />
+            <circle r="6" />
+            <g strokeWidth="2">
+              <line y1="-16" y2="-24" />
+              <line y1="16" y2="24" />
+              <line x1="-16" x2="-24" />
+              <line x1="16" x2="24" />
+              <line x1="-11" x2="-17" y1="-11" y2="-17" />
+              <line x1="11" x2="17" y1="11" y2="17" />
+              <line x1="11" x2="17" y1="-11" y2="-17" />
+              <line x1="-11" x2="-17" y1="11" y2="17" />
+            </g>
           </g>
-        </g>
-      </svg>
+        </svg>
 
-      <svg className={`${styles.gear} ${styles.g2}`} viewBox="0 0 44 44">
-        <g className={styles.ccw} fill="none" stroke="#C9A961" strokeWidth="0.9" transform="translate(22 22)">
-          <circle r="11" />
-          <circle r="4" />
-          <g strokeWidth="1.6">
-            <line y1="-11" y2="-17" />
-            <line y1="11" y2="17" />
-            <line x1="-11" x2="-17" />
-            <line x1="11" x2="17" />
-            <line x1="-8" x2="-12" y1="-8" y2="-12" />
-            <line x1="8" x2="12" y1="8" y2="12" />
-            <line x1="8" x2="12" y1="-8" y2="-12" />
-            <line x1="-8" x2="-12" y1="8" y2="12" />
+        <svg className={`${styles.gear} ${styles.g2}`} viewBox="0 0 44 44">
+          <g className={styles.ccw} fill="none" stroke="#C9A961" strokeWidth="0.9" transform="translate(22 22)">
+            <circle r="11" />
+            <circle r="4" />
+            <g strokeWidth="1.6">
+              <line y1="-11" y2="-17" />
+              <line y1="11" y2="17" />
+              <line x1="-11" x2="-17" />
+              <line x1="11" x2="17" />
+              <line x1="-8" x2="-12" y1="-8" y2="-12" />
+              <line x1="8" x2="12" y1="8" y2="12" />
+              <line x1="8" x2="12" y1="-8" y2="-12" />
+              <line x1="-8" x2="-12" y1="8" y2="12" />
+            </g>
           </g>
-        </g>
-      </svg>
+        </svg>
 
-      <svg className={`${styles.gear} ${styles.g3}`} viewBox="0 0 34 34">
-        <g className={styles.cw} fill="none" stroke="#C9A961" strokeWidth="0.8" transform="translate(17 17)">
-          <circle r="8" />
-          <circle r="3" />
-          <g strokeWidth="1.3">
-            <line y1="-8" y2="-13" />
-            <line y1="8" y2="13" />
-            <line x1="-8" x2="-13" />
-            <line x1="8" x2="13" />
+        <svg className={`${styles.gear} ${styles.g3}`} viewBox="0 0 34 34">
+          <g className={styles.cw} fill="none" stroke="#C9A961" strokeWidth="0.8" transform="translate(17 17)">
+            <circle r="8" />
+            <circle r="3" />
+            <g strokeWidth="1.3">
+              <line y1="-8" y2="-13" />
+              <line y1="8" y2="13" />
+              <line x1="-8" x2="-13" />
+              <line x1="8" x2="13" />
+            </g>
           </g>
-        </g>
-      </svg>
+        </svg>
       </div>
     </div>
   );

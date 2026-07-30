@@ -18,7 +18,7 @@ export default async function Home(): Promise<JSX.Element> {
   const profile = await getProfileData();
   const blog = await getBlogDataList();
 
-  const stackNames: string[] = profile?.stacks?.map((s: any) => s?.name).filter(Boolean) ?? [];
+  const stackNames: Array<string> = profile?.stacks?.map((s: any) => s?.name).filter(Boolean) ?? [];
 
   return (
     <>

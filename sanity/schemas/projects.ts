@@ -23,6 +23,22 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'prominence',
+      title: 'Prominence',
+      description: 'Bento size on the Work archive. Leave empty to auto-size by position.',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Extra large', value: 'xl' },
+          { title: 'Large', value: 'l' },
+          { title: 'Tall', value: 'tall' },
+          { title: 'Wide', value: 'wide' },
+          { title: 'Medium', value: 'md' },
+          { title: 'Small', value: 'sm' },
+        ],
+      },
+    }),
+    defineField({
       name: 'startDate',
       title: 'Start Date',
       type: 'date',

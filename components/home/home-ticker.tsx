@@ -3,7 +3,7 @@ import { LayoutContainer } from '@/components/layout/layout-container';
 /* Full-bleed tech ticker bar between the hero and the work section. */
 const FALLBACK_STACK = ['React', 'Vue', 'Nuxt', 'TypeScript', 'Next', 'Svelte', 'Go'];
 
-export function HomeTicker({ stacks }: { stacks?: string[] }) {
+export function HomeTicker({ stacks }: { stacks?: Array<string> }) {
   const items = stacks?.length ? stacks : FALLBACK_STACK;
   const line = `· ${items.map((s) => s.toUpperCase()).join(' · ')} ·`;
 

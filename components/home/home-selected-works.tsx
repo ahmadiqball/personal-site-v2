@@ -33,7 +33,7 @@ function ArchThumb({ gradient, img }: { gradient: string; img?: string }) {
   );
 }
 
-export function HomeSelectedWorks({ projects }: { projects?: any[] }) {
+export function HomeSelectedWorks({ projects }: { projects?: Array<any> }) {
   const rows = (projects ?? []).slice(0, 4);
 
   return (
@@ -74,7 +74,10 @@ export function HomeSelectedWorks({ projects }: { projects?: any[] }) {
                   className="group flex items-center gap-3 border-t border-line-10 py-4 text-inherit no-underline transition-colors duration-med ease-ease last:border-b hover:bg-[rgba(201,169,97,0.04)] sm:gap-4 sm:py-5"
                   href={href}
                 >
-                  <span className="hidden w-6 shrink-0 font-mono text-[11px] text-stone-600 transition-colors duration-med ease-ease group-hover:text-candleflame sm:block">{ ROMAN[i] }.</span>
+                  <span className="hidden w-6 shrink-0 font-mono text-[11px] text-stone-600 transition-colors duration-med ease-ease group-hover:text-candleflame sm:block">
+                    { ROMAN[i] }
+                    .
+                  </span>
 
                   <ArchThumb gradient={GRADIENTS[i % GRADIENTS.length]} img={p?.images?.[0]?.asset?.url} />
 
