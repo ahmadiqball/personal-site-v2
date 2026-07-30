@@ -1,7 +1,11 @@
 import type { Metadata } from 'next';
 
 import { HomeBanner } from '@/components/home/home-banner';
-import { getProfileData } from '@/sanity/get-data';
+import { HomeFooter } from '@/components/home/home-footer';
+import { HomeSelectedWorks } from '@/components/home/home-selected-works';
+import { HomeTicker } from '@/components/home/home-ticker';
+import { HomeWritingTeaser } from '@/components/home/home-writing-teaser';
+import { getBlogDataList, getProfileData } from '@/sanity/get-data';
 
 export const metadata: Metadata = {
   icons: {
@@ -12,12 +16,21 @@ export const metadata: Metadata = {
 
 export default async function Home(): Promise<JSX.Element> {
   const profile = await getProfileData();
+  const blog = await getBlogDataList();
+
+  const stackNames: string[] = profile?.stacks?.map((s: any) => s?.name).filter(Boolean) ?? [];
 
   return (
     <>
       <HomeBanner profile={profile} />
 
-      {/* ticker, selected works, writing teaser and footer land in the next step */}
+      <HomeTicker stacks={stackNames} />
+
+      <HomeSelectedWorks projects={profile?.featuredPortfolio} />
+
+      <HomeWritingTeaser posts={blog} />
+
+      <HomeFooter />
     </>
   );
 }

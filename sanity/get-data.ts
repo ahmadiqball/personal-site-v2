@@ -37,10 +37,14 @@ export async function getProfileData(): Promise<any> {
         },
         featuredPortfolio[]->{
           projectName,
+          tagline,
           description,
           slug,
+          startDate,
+          endDate,
           webUrl,
           repoUrl,
+          stacks[]->{ name },
           "images": [images[0]{
             asset->{
               ...,

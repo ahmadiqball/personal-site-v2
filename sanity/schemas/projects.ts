@@ -17,6 +17,12 @@ export default defineType({
       type: 'slug',
     }),
     defineField({
+      name: 'tagline',
+      title: 'Tagline',
+      description: 'One-line summary used on cards and the homepage archive rows.',
+      type: 'string',
+    }),
+    defineField({
       name: 'startDate',
       title: 'Start Date',
       type: 'date',
