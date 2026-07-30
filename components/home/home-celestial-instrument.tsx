@@ -73,7 +73,7 @@ export function HomeCelestialInstrument({
 
       {/* twinkling star field */}
       <svg
-        className="pointer-events-none absolute inset-0 m-auto h-[560px] w-[560px]"
+        className="pointer-events-none absolute inset-0 m-auto h-[420px] w-[420px] min-[981px]:h-[560px] min-[981px]:w-[560px]"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 560 560"
       >

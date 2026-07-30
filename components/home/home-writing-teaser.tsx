@@ -73,7 +73,7 @@ export function HomeWritingTeaser({ posts }: { posts?: any[] }) {
             return (
               <li key={post?._id ?? i}>
                 <a
-                  className="grid grid-cols-[1fr_50px_60px] items-baseline gap-4 border-t border-line-10 py-[18px] text-inherit no-underline transition-[padding] duration-med ease-ease last:border-b hover:pl-3"
+                  className="grid grid-cols-[1fr_auto] items-baseline gap-4 border-t border-line-10 py-[18px] text-inherit no-underline transition-[padding] duration-med ease-ease last:border-b hover:pl-3 sm:grid-cols-[1fr_50px_60px]"
                   href={href}
                 >
                   <span className="flex items-baseline gap-3">
@@ -81,7 +81,7 @@ export function HomeWritingTeaser({ posts }: { posts?: any[] }) {
                     <span className="block font-sans text-[22px] italic leading-[1.3] text-vellum">{ title.slice(1) }</span>
                   </span>
 
-                  <svg aria-hidden="true" className="h-4 w-[50px] self-center" viewBox="0 0 50 16">
+                  <svg aria-hidden="true" className="hidden h-4 w-[50px] self-center sm:block" viewBox="0 0 50 16">
                     <path d={WAVES[i % WAVES.length]} fill="none" opacity="0.5" stroke="#C9A961" strokeWidth="0.5" />
                   </svg>
 

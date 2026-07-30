@@ -13,6 +13,8 @@
 
   body {
     position: relative;
+    /* Clip the celestial instrument's oversized shells/stars on narrow screens. */
+    overflow-x: hidden;
   }
 
   /* Fixed 50px khatim tessellation over everything, ~5% opacity. */

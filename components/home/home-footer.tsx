@@ -41,12 +41,12 @@ export function HomeFooter() {
         </div>
 
         {/* meta strip */}
-        <div className="flex items-baseline justify-between gap-4 pt-3.5">
+        <div className="flex flex-col gap-4 pt-3.5 sm:flex-row sm:items-baseline sm:justify-between">
           <div>
             <div className="font-mono text-[10px] tracking-[0.05em] text-stone-600">© ahmad iqbal yahya · mmxxvi · bandung</div>
             <div className="mt-1 font-caveat text-sm text-stone-400">— with care, from 768m</div>
           </div>
-          <div className="text-right">
+          <div className="sm:text-right">
             <div className="font-mono text-[10px] tracking-[0.05em] text-stone-600">built by hand · v1.0</div>
             <a className="mt-1 inline-block font-mono text-[9px] tracking-[0.1em] text-candleflame no-underline transition-colors duration-fast ease-ease hover:text-vellum" href="#">colophon ↗</a>
           </div>
