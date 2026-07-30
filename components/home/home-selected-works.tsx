@@ -71,21 +71,22 @@ export function HomeSelectedWorks({ projects }: { projects?: any[] }) {
             return (
               <li key={p?._id ?? i}>
                 <a
-                  className="group grid grid-cols-[24px_52px_1fr_auto] items-center gap-4 border-t border-line-10 py-5 text-inherit no-underline transition-colors duration-med ease-ease last:border-b hover:bg-[rgba(201,169,97,0.04)]"
+                  className="group flex items-center gap-3 border-t border-line-10 py-4 text-inherit no-underline transition-colors duration-med ease-ease last:border-b hover:bg-[rgba(201,169,97,0.04)] sm:gap-4 sm:py-5"
                   href={href}
                 >
-                  <span className="font-mono text-[11px] text-stone-600 transition-colors duration-med ease-ease group-hover:text-candleflame">{ ROMAN[i] }.</span>
+                  <span className="hidden w-6 shrink-0 font-mono text-[11px] text-stone-600 transition-colors duration-med ease-ease group-hover:text-candleflame sm:block">{ ROMAN[i] }.</span>
 
                   <ArchThumb gradient={GRADIENTS[i % GRADIENTS.length]} img={p?.images?.[0]?.asset?.url} />
 
-                  <span className="min-w-0">
-                    <span className="block truncate font-cinzel text-[22px] font-medium uppercase tracking-[0.03em] text-vellum">{ p?.projectName }</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate font-cinzel text-[19px] font-medium uppercase tracking-[0.03em] text-vellum sm:text-[22px]">{ p?.projectName }</span>
                     { p?.tagline && (
-                      <span className="mt-0.5 block truncate font-sans text-sm italic text-stone-400 transition-colors duration-med ease-ease group-hover:text-stone-200">{ p.tagline }</span>
+                      <span className="mt-0.5 block truncate font-sans text-[13px] italic text-stone-400 transition-colors duration-med ease-ease group-hover:text-stone-200">{ p.tagline }</span>
                     ) }
+                    { meta && <span className="mt-1 block font-mono text-[10px] text-stone-600 sm:hidden">{ meta }</span> }
                   </span>
 
-                  <span className="whitespace-nowrap text-right font-mono text-[10px] text-stone-600 transition-colors duration-med ease-ease group-hover:text-candleflame">
+                  <span className="hidden shrink-0 whitespace-nowrap text-right font-mono text-[10px] text-stone-600 transition-colors duration-med ease-ease group-hover:text-candleflame sm:inline">
                     { meta }
                     <span className="ml-1 inline-block opacity-0 transition-all duration-med ease-ease group-hover:translate-x-1 group-hover:opacity-100">→</span>
                   </span>
@@ -95,7 +96,7 @@ export function HomeSelectedWorks({ projects }: { projects?: any[] }) {
           }) }
         </ul>
 
-        <div className="mt-[18px] flex items-center justify-between">
+        <div className="mt-4 flex flex-col gap-2 sm:mt-[18px] sm:flex-row sm:items-center sm:justify-between">
           <a className="font-mono text-[11px] tracking-[0.1em] text-candleflame no-underline transition-colors duration-fast ease-ease hover:text-vellum" href="/portfolio">→ open the full archive</a>
           <span className="font-caveat text-sm text-stone-400">more peaks not shown ↗</span>
         </div>
