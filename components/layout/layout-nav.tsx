@@ -98,9 +98,9 @@ export function LayoutNav() {
         </button>
       </LayoutContainer>
 
-      {/* mobile panel */}
+      {/* mobile panel — absolute dropdown, overlays content instead of pushing it */}
       { open && (
-        <div className="border-t border-line-08 bg-ink-night/95 backdrop-blur-md md:hidden">
+        <div className="absolute inset-x-0 top-full border-b border-line-08 bg-ink-night/95 shadow-plate backdrop-blur-md md:hidden">
           <LayoutContainer className="flex flex-col gap-4 py-5">
             { navList.map((item) => (
               <Link

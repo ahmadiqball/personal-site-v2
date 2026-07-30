@@ -21,7 +21,9 @@ export default function RootLayout({
       <body className={ `${fontVariables} bg-ink-night text-vellum font-sans antialiased` }>
         <LayoutNav />
 
-        <main className="relative z-10 min-h-screen">{ children }</main>
+        {/* clip (not hidden) so stray horizontal overflow can't scroll the page,
+            without creating a scroll container that would break the sticky nav */}
+        <main className="relative z-10 min-h-screen overflow-x-clip">{ children }</main>
       </body>
     </html>
   );

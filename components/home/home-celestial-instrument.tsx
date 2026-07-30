@@ -1,10 +1,21 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
 import styles from './home-celestial-instrument.module.css';
 
 /* The signature hero ornament: an arch-masked portrait at the nucleus of tilted,
    slowly-rotating armillary shells, orbiting bodies, a graduated watch tick-ring,
-   twinkling stars and clockwork gears. Server component — the tick lines are
-   computed at render. Tailwind-first; the animated shell/orbit/gear geometry
-   lives in the co-located CSS module (see its header for why). */
+   twinkling stars and clockwork gears. Tailwind-first; the animated shell/orbit/
+   gear geometry lives in the co-located CSS module (see its header for why).
+
+   The art is composed at a fixed "design" size (560×600) then uniformly scaled to
+   fit its container width via a ResizeObserver, inside an overflow-hidden wrapper.
+   This keeps every part in proportion on any screen AND stops the rotating shells
+   from bleeding out and changing the page's scroll width as they spin. */
+
+const DESIGN_W = 560;
+const DESIGN_H = 600;
 
 interface HomeCelestialInstrumentProps {
   plateMeta?: string;
@@ -48,11 +59,33 @@ export function HomeCelestialInstrument({
   portraitAlt = 'Self-portrait',
   portraitUrl = '/assets/astrolabe/portrait-plate.png',
 }: HomeCelestialInstrumentProps) {
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) {
+      return;
+    }
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0]?.contentRect.width ?? DESIGN_W;
+      setScale(Math.min(1, width / DESIGN_W));
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       aria-hidden="true"
-      className="relative z-[2] flex h-[360px] origin-center scale-[0.55] animate-reveal items-center justify-center opacity-0 [animation-delay:500ms] [animation-duration:1200ms] min-[400px]:h-[400px] min-[400px]:scale-[0.62] min-[480px]:h-[460px] min-[480px]:scale-[0.75] min-[640px]:h-[540px] min-[640px]:scale-[0.88] min-[981px]:h-[600px] min-[981px]:scale-100"
+      className="relative z-[2] flex w-full animate-reveal justify-center overflow-hidden opacity-0 [animation-delay:500ms] [animation-duration:1200ms]"
+      ref={wrapRef}
+      style={{ height: DESIGN_H * scale }}
     >
+      <div
+        className="relative flex h-[600px] w-[560px] shrink-0 items-center justify-center"
+        style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}
+      >
       {/* atom shells */}
       <div className={styles.armillary}>
         <span className={`${styles.ar} ${styles.arOuter}`} />
@@ -163,6 +196,7 @@ export function HomeCelestialInstrument({
           </g>
         </g>
       </svg>
+      </div>
     </div>
   );
 }
