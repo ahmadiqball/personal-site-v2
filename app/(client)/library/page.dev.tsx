@@ -4,7 +4,7 @@ import { CoreRivetedPlate } from '@/components/core/core-riveted-plate';
 import { CoreSectionEyebrow } from '@/components/core/core-section-eyebrow';
 import { CoreStatCell } from '@/components/core/core-stat-cell';
 import { CoreTag } from '@/components/core/core-tag';
-import { Container } from '@/components/layout/container';
+import { LayoutContainer } from '@/components/layout/layout-container';
 
 // Dev-only component library. Lives at /library under `next dev` and is excluded
 // from the production build via `pageExtensions` in next.config.js. Renders every
@@ -60,7 +60,7 @@ function Section({ children, note, station, title }: { children: React.ReactNode
 
 export default function ComponentLibrary() {
   return (
-    <Container className="py-16">
+    <LayoutContainer className="py-16">
       <header className="mb-6">
         <div className="font-mono text-[10px] tracking-[0.22em] text-candleflame">— ASTROLABE · DEV ONLY</div>
 
@@ -248,6 +248,6 @@ export default function ComponentLibrary() {
           />
         </div>
       </Section>
-    </Container>
+    </LayoutContainer>
   );
 }

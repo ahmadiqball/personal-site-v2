@@ -27,7 +27,11 @@ export async function getProfileData(): Promise<any> {
       },
     },
     query: `*[_type == "profile"]{
-        ..., 
+        ...,
+        portrait{
+          ...,
+          asset->{...}
+        },
         stacks[]->{
           ..., ${stackQuery}
         },

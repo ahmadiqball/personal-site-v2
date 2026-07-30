@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { Nav } from '@/components/layout/nav';
+import { LayoutNav } from '@/components/layout/layout-nav';
 
 import { fontVariables } from './fonts';
 import './globals.css';
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={ `${fontVariables} bg-ink-night text-vellum font-sans antialiased` }>
-        <Nav />
+        <LayoutNav />
 
         <main className="relative z-10 min-h-screen">{ children }</main>
       </body>

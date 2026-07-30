@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Container } from './container';
+import { LayoutContainer } from './layout-container';
 import { navList } from './layout.constants';
 
 /* Sticky top navigation for the Astrolabe redesign: an animated armillary brand
@@ -42,12 +42,12 @@ function BrandMark() {
   );
 }
 
-export function Nav() {
+export function LayoutNav() {
   const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-[100] border-b border-line-08 bg-ink-night/85 py-3.5 font-mono text-[11px] tracking-[0.05em] text-stone-600 backdrop-blur-md">
-      <Container className="flex items-center justify-between">
+      <LayoutContainer className="flex items-center justify-between">
         <div className="flex flex-wrap items-center gap-3.5 sm:gap-[22px]">
           <BrandMark />
 
@@ -78,7 +78,7 @@ export function Nav() {
             );
           }) }
         </nav>
-      </Container>
+      </LayoutContainer>
     </header>
   );
 }
