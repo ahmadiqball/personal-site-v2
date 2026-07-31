@@ -191,6 +191,8 @@ export async function getBlogDataList() {
       publishedAt,
       title,
       type,
+      deck,
+      featured,
       "char": length(pt::text(body))
       }`,
   });

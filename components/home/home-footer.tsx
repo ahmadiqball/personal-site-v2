@@ -21,7 +21,7 @@ export function HomeFooter() {
         <svg aria-hidden="true" className="absolute right-0 top-2 hidden h-[70px] w-[50px] opacity-35 sm:block" viewBox="0 0 60 80">
           <g fill="none" stroke="#C9A961" strokeWidth="1.2">
             <path d="M 12 10 Q 12 4 30 4 Q 48 4 48 10 L 48 60 Q 48 72 30 72 Q 12 72 12 60 Z" />
-            <line stroke-width="0.8" x1="20" x2="20" y1="6" y2="68" />
+            <line strokeWidth="0.8" x1="20" x2="20" y1="6" y2="68" />
           </g>
         </svg>
 

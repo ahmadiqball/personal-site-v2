@@ -17,6 +17,20 @@ export default defineType({
       type: 'slug',
     }),
     defineField({
+      name: 'deck',
+      title: 'Deck',
+      description: 'Short standfirst shown under the title on the article page.',
+      type: 'text',
+      rows: 2,
+    }),
+    defineField({
+      name: 'featured',
+      title: 'Featured',
+      description: 'Highlight this note at the top of the writing archive ("start here").',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
       name: 'type',
       options: {
         list: ['Front End', 'Back End', 'Fullstack', 'Data Analysis', 'Data Science', 'Algorithm', 'Data Structure', 'Software Engineering'],

@@ -8,7 +8,7 @@ import { HomeCelestialInstrument } from './home-celestial-instrument';
    Sanity fields are populated. */
 
 // Faint topographic contour texture behind the copy column (~5%).
-const TOPO = 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 500 800\' preserveAspectRatio=\'xMidYMid slice\'><g stroke=\'%23C9A961\' stroke-width=\'0.5\' fill=\'none\'><path d=\'M -50 200 Q 150 170 350 195 T 600 200\'/><path d=\'M -50 240 Q 170 215 360 235 T 600 245\'/><path d=\'M -50 290 Q 180 265 380 280 T 600 285\'/><path d=\'M -50 350 Q 200 320 400 340 T 600 350\'/><path d=\'M -50 420 Q 220 395 420 410 T 600 420\'/><path d=\'M -50 500 Q 240 475 440 495 T 600 510\'/><path d=\'M -50 590 Q 260 560 460 580 T 600 600\'/></g></svg>")';
+const TOPO = 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 500 800\' preserveAspectRatio=\'xMidYMid slice\'><g stroke=\'%23C9A961\' strokeWidth=\'0.5\' fill=\'none\'><path d=\'M -50 200 Q 150 170 350 195 T 600 200\'/><path d=\'M -50 240 Q 170 215 360 235 T 600 245\'/><path d=\'M -50 290 Q 180 265 380 280 T 600 285\'/><path d=\'M -50 350 Q 200 320 400 340 T 600 350\'/><path d=\'M -50 420 Q 220 395 420 410 T 600 420\'/><path d=\'M -50 500 Q 240 475 440 495 T 600 510\'/><path d=\'M -50 590 Q 260 560 460 580 T 600 600\'/></g></svg>")';
 
 const FALLBACK_STACK = ['Vue', 'Nuxt', 'React', 'Next', 'Svelte', 'TypeScript', 'Go'];
 
