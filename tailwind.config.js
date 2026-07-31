@@ -21,14 +21,14 @@ module.exports = {
         'stone-600': '#6B6760',
         'stone-400': '#8B857A',
         'stone-200': '#B8B2A6',
-        vellum: '#EDEAE3',
+        'vellum': '#EDEAE3',
         // Accents
-        candleflame: '#C9A961',
-        nila: '#5B4FE5',
-        ember: '#8A3A24',
+        'candleflame': '#C9A961',
+        'nila': '#5B4FE5',
+        'ember': '#8A3A24',
         // Semantic aliases
-        bg: '#08070C',
-        surface: '#14121A',
+        'bg': '#08070C',
+        'surface': '#14121A',
         'surface-raised': '#2A2530',
       },
       borderColor: {
@@ -76,31 +76,31 @@ module.exports = {
         slow: '900ms', // headline reveal
       },
       keyframes: {
-        reveal: { to: { opacity: '1' } },
+        'reveal': { to: { opacity: '1' } },
         'reveal-up': { to: { opacity: '1', transform: 'translateY(0)' } },
-        orbit: { to: { transform: 'rotate(360deg)' } },
-        spin: { to: { transform: 'rotate(360deg)' } },
-        twinkle: { '0%,100%': { opacity: '1' }, '50%': { opacity: '.2' } },
-        breathe: {
+        'orbit': { to: { transform: 'rotate(360deg)' } },
+        'spin': { to: { transform: 'rotate(360deg)' } },
+        'twinkle': { '0%,100%': { opacity: '1' }, '50%': { opacity: '.2' } },
+        'breathe': {
           '0%,100%': { opacity: '.7', boxShadow: '0 0 4px #C9A961' },
           '50%': { opacity: '1', boxShadow: '0 0 12px #C9A961' },
         },
       },
       animation: {
-        reveal: 'reveal 800ms cubic-bezier(0.2,0.8,0.2,1) forwards',
+        'reveal': 'reveal 800ms cubic-bezier(0.2,0.8,0.2,1) forwards',
         'reveal-up': 'reveal-up 900ms cubic-bezier(0.2,0.8,0.2,1) forwards',
-        twinkle: 'twinkle 3.6s ease-in-out infinite',
-        breathe: 'breathe 3s ease-in-out infinite',
+        'twinkle': 'twinkle 3.6s ease-in-out infinite',
+        'breathe': 'breathe 3s ease-in-out infinite',
         // orbit/spin use per-element durations set inline (18s–220s); base helpers:
-        orbit: 'orbit 20s linear infinite',
-        spin: 'spin 30s linear infinite',
+        'orbit': 'orbit 20s linear infinite',
+        'spin': 'spin 30s linear infinite',
         // brand-mark armillary rings (60/90/120s, middle ring reversed)
         'orbit-60': 'orbit 60s linear infinite',
         'orbit-90': 'orbit 90s linear infinite reverse',
         'orbit-120': 'orbit 120s linear infinite',
       },
       backgroundImage: {
-        khatim: "url('/assets/astrolabe/khatim-tile.svg')",
+        'khatim': 'url(\'/assets/astrolabe/khatim-tile.svg\')',
         'gold-radial': 'radial-gradient(circle at 50% 0%, rgba(201,169,97,0.06), transparent 60%)',
       },
       boxShadow: {
