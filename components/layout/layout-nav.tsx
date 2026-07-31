@@ -59,7 +59,7 @@ export function LayoutNav() {
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-[100] border-b border-line-08 bg-ink-night/85 font-mono text-[11px] tracking-[0.05em] text-stone-600 backdrop-blur-md">
+    <header className="sticky top-0 z-[100] border-b border-line-08 bg-ink-night/85 font-mono text-[11px] tracking-[0.05em] text-stone-600 backdrop-blur-md print:hidden">
       <LayoutContainer className="flex items-center justify-between py-3.5">
         <div className="flex items-center gap-3.5 md:gap-[22px]">
           <BrandMark />

@@ -5,7 +5,7 @@ import { LayoutContainer } from '@/components/layout/layout-container';
 
 export function HomeFooter() {
   return (
-    <footer className="relative overflow-hidden border-t border-line-08 pb-6 pt-14">
+    <footer className="relative overflow-hidden border-t border-line-08 pb-6 pt-14 print:hidden">
       <LayoutContainer className="relative">
         {/* ice axe (left) */}
         <svg aria-hidden="true" className="absolute left-0 top-2 hidden h-[130px] w-9 opacity-40 sm:block" viewBox="0 0 60 200">

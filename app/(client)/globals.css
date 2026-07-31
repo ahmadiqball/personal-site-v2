@@ -64,6 +64,28 @@
   }
 }
 
+/* Print stylesheet — mainly for the CV. Drop the ink ground and ornaments and
+   force readable black-on-white for the content marked `.cv-print`. */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  body::before {
+    display: none !important;
+  }
+
+  .cv-print,
+  .cv-print .text-vellum,
+  .cv-print .text-stone-200,
+  .cv-print .text-stone-400,
+  .cv-print .text-stone-600,
+  .cv-print .text-candleflame {
+    color: #000 !important;
+  }
+}
+
 /* Honour reduced-motion everywhere — from tokens/motion.css. */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -17,6 +17,13 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'summary',
+      title: 'Summary',
+      description: 'Lead paragraph for the CV summary section.',
+      type: 'text',
+      rows: 4,
+    }),
+    defineField({
       name: 'works',
       title: 'Works Experience',
       type: 'array',
